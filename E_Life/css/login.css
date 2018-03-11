@@ -7,13 +7,13 @@
 .login_back img{
 	display: block;
 }
-#login_sec{
+.log_reg_sec{
 	position: absolute;
 	top: 60px;	
 	width: 100%;
 }
 
-#login_sec p{
+.log_reg_sec p{
 	width: 100%;
 	height: 30px;
 	line-height: 30px;
@@ -54,33 +54,26 @@
 	height: 40px;
 	margin-top: 5px;
 	font-size: 16px;
+	border: none;
+	text-align: left;
 }
 
-.regxnum{
-	width: 35%;
+.forgetpaw{
+	width: 33%;
 	height: 50px;
 	float: left;
 }
 
-.regxnum a{
+.forgetpaw a{
 	width: 90%;
 	height: 30px;
 	line-height: 30px;
 	text-align: center;
-	color: #FFFFFF;
+	color: #00BEAE;
 	border-radius: 5px;
-	background: #C0C0C0;
+	background: none;
 	display: block;
 	margin: 10px auto;
-}
-
-#regx{
-	border-top: none;
-}
-
-#regx a{
-	color: #00BEAE;
-	background: none;
 }
 
 #loginbtn{
@@ -101,6 +94,28 @@
 	color: #00BEAE;
 }
 
-#register_sec{
+.regitem{
+	width: 30%;
+}
+
+#regiterbtn{
+	width: 95%;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	color: #FFFFFF;
+	font-size: 16px;
+	font-family: "微软雅黑";
+	background: #C0C0C0;
+	border-radius: 5px;
+	margin: 10px auto;
+	display: block;
+}
+
+/*#register_{
+	display: none;
+}*/
+
+#login_{
 	display: none;
 }

@@ -1,10 +1,14 @@
 <?php
     ini_set("error_reporting","E_ALL & ~E_NOTICE");
-    /*include_once("common.php");*/
 
     $serves = array();
+    $arr = array(  
+        "user" => $_GET['loginuser'],  
+        "pass" => $_GET['loginpass'],  
+        "name" => 'response'  
+      
+    );
     $serves = get_serve();
-	//echo json_encode($serves);
     echo $_GET['jsoncallback']."(".json_encode($serves).")";//解决ajax跨域问题
 
     function get_serve(){
@@ -16,6 +20,8 @@
         $dbname = "elife";
         $username = "root";
         $password = "";
+
+        $data = array("ret"=>false, "msg"=>"");
 
     	$serves = array();
 	    try {

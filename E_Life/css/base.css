@@ -140,3 +140,106 @@ input{
 	display: block;
 }
 
+.elife_messagebox{
+    text-align: left;
+    padding: 1.2em 20px .5em;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: none;
+}
+
+.elife_messagebox_content {
+    position: fixed;
+    z-index: 13;
+    width: 80%;
+    top: 30%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-color: rgba(0,0,0,0.6);
+    text-align: center;
+    border-radius: 3px;
+}
+
+.elife_messagebox_title{
+    font-weight: 400;
+    font-size: 17px;
+    padding: 1.2em 20px .5em;
+}
+
+.elife_messagebox_info{
+    padding: 2em 20px 2em;
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+}
+
+.elife_messagebox_ft {
+    position: relative;
+    line-height: 42px;
+    margin-top: 20px;
+    font-size: 17px;
+}
+
+.elife_messagebox_ft a {
+    display: block;
+    color: #353535;
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    position: relative;
+    float: left;
+    width: 50%;
+}
+
+.elife_messagebox_ft a:active,
+.elife_messagebox_ft a:hover {
+    text-decoration: none;
+    background: #EEE;
+}
+
+.elife_messagebox_ft:after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 1px;
+    border-top: 1px solid #D5D5D6;
+    -webkit-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scaleY(0.5);
+    -ms-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+}
+
+.elife_messagebox_ft a:after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    border-left: 1px solid #D5D5D6;
+    -webkit-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scaleX(0.5);
+    -ms-transform: scaleX(0.5);
+    transform: scaleX(0.5);
+}
+.elife_messagebox_ft a:first-child:after {
+    display: none;
+}
+
+.elife_messagebox_ft a:last-child {
+    float: none;
+    width: auto;
+    overflow: hidden;
+    *zoom: 1;
+}
+
