@@ -1,4 +1,3 @@
-var user_info_='';
 var t=0;
 var p=0;
 var cp=0;
@@ -38,30 +37,31 @@ $('#regiterbtn').click(function(){
 	var cpp=$('#input_reg_cp').val();
 	if(pp == cpp){
 		up_user_info(tt,pp,cpp);
-		ELife_UI.Toast.show('注册成功！欢迎加入易生活');
-		window.setTimeout(function(){
-			ELife_UI.Toast.hide();
-		},1500);
 	}else{
 		ELife_UI.Toast.show('密码不一致');
 		window.setTimeout(function(){
 			ELife_UI.Toast.hide();
 			$('#input_reg_cp').val('');
 			$('#input_reg_pwd').val('');
-		},1500);
+		},2000);
 	}
 });
 
-function up_user_info(tel,pwd,cpwd){
+function up_user_info(tel_,pwd_){
 	$.ajax(  
     {  
         type:'get',  
-        url : 'http://elife.com/register.php?tel=tel&pwd=pwd&cpwd=cpwd',  
+        url : 'http://elife.com/register.php?tel='+tel_+'&pwd='+pwd_+'',  
         dataType : 'jsonp',  
         jsonp:"jsoncallback", 
         timeout:15000,
-        success  : function(data) {  
-            user_create(data);  
+        success  : function(data) { 
+        	console.log(data);
+            if(data.ret){
+            	insertSuccess();
+            }else{
+            	console.log(data.msg);
+            }
         },  
         error : function(XMLHttpRequest, textStatus, errorThrown) {
             console.log(XMLHttpRequest.readyState);
@@ -70,8 +70,19 @@ function up_user_info(tel,pwd,cpwd){
             ELife_UI.Toast.show('服务器繁忙，请稍后重试！');
 			window.setTimeout(function(){
 				ELife_UI.Toast.hide();
-			},1500);
+			},2000);
         }  
     }  
 ); 
+}
+
+function insertSuccess(){
+	ELife_UI.Toast.show('注册成功！欢迎加入易生活');
+	window.setTimeout(function(){
+		ELife_UI.Toast.hide();
+		
+		//页面跳转到首页，并且是登录状态
+		
+		
+	},2000);
 }

@@ -2,11 +2,7 @@
     ini_set("error_reporting","E_ALL & ~E_NOTICE");
 
     $data = array("ret"=>false, "msg"=>"");
-    /*$arr = array(  
-        "tel" => $_GET['tel'],  
-        "pwd" => $_GET['pwd'],  
-        "cpwd"=> $_GET['cpwd']
-    );*/
+    
     $tel=$_GET['tel'];
     $pwd=$_GET['pwd'];
 

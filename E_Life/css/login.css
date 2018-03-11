@@ -112,10 +112,10 @@
 	display: block;
 }
 
-/*#register_{
-	display: none;
-}*/
-
-#login_{
+#register_{
 	display: none;
 }
+
+/*#login_{
+	display: none;
+}*/

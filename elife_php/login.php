@@ -2,11 +2,6 @@
     ini_set("error_reporting","E_ALL & ~E_NOTICE");
 
     $data = array("ret"=>false, "msg"=>"");
-    /*$arr = array(  
-        "tel" => $_GET['tel'],  
-        "pwd" => $_GET['pwd'],  
-        "cpwd"=> $_GET['cpwd']
-    );*/
     $tel=$_GET['tel'];
     $pwd=$_GET['pwd'];
 
@@ -30,11 +25,14 @@
             $_opts_values = array(PDO::ATTR_PERSISTENT=>true,PDO::ATTR_ERRMODE=>2,PDO::MYSQL_ATTR_INIT_COMMAND=>'SET NAMES utf8');//解决乱码问题
 	        $conn = new PDO("mysql:host=$hostname;dbname=$dbname", $username, $password,$_opts_values);
 	        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	        $sql = "insert into `elife_user` (`tel`,`pwd`,`rank`,`createtime`) values ('$tel','$pwd',0,'$timestamp')";
+	        $sql = "select * from elife_user where tel='$tel' and pwd='$pwd'";
 	        $stmt = $conn->prepare($sql);
-	        $data['ret']=$stmt->execute();
-	        if (!$data["ret"]) {
-                $data["msg"] = $stmt->errorInfo();
+	        $stmt->execute();
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            if (count($result)){
+                $data['ret']=true;
+            }else{
+                $data['ret']=false;
             }
 	    }
 	    catch(PDOException $e)
