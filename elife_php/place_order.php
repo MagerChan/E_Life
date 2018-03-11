@@ -34,7 +34,7 @@
             $_opts_values = array(PDO::ATTR_PERSISTENT=>true,PDO::ATTR_ERRMODE=>2,PDO::MYSQL_ATTR_INIT_COMMAND=>'SET NAMES utf8');//解决乱码问题
 	        $conn = new PDO("mysql:host=$hostname;dbname=$dbname", $username, $password,$_opts_values);
 	        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$sql="insert into elife_order (user_id,serve_id,addr_id,serve_hour,aunt_num,serve_time,cost,status,submit_time) values ($u_id,$s_id,$a_id,'$hournum','$auntnum','$servetime','$cost',0,'$timestamp')";
+$sql="insert into elife_order (user_id,serve_id,addr_id,serve_hour,aunt_num,serve_time,cost,status,submit_time,is_show) values ($u_id,$s_id,$a_id,'$hournum','$auntnum','$servetime','$cost',0,'$timestamp',1)";
 	        $stmt = $conn->prepare($sql);
 	        $data['ret']=$stmt->execute();
 	        if (!$data["ret"]) {

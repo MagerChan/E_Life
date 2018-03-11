@@ -202,21 +202,6 @@ function getNowTime() {
 	return nowtime;
 }
 
-/*将时间戳转换给日期格式*/
-function getLocalTime(nS) {
-	var day = new Date(parseInt(nS) * 1000);
-	var year = day.getFullYear();
-	var month = day.getMonth() + 1;
-	var date_ = day.getDate();
-	var week = day.getDay();
-	return {
-		year: year,
-		month: month,
-		date_: date_,
-		week: week
-	}
-}
-
 $('#houradd').click(function() {
 	$('#hoursub').removeClass('nouse');
 	var num = parseInt($('#hournum').html());
