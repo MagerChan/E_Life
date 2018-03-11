@@ -1,15 +1,29 @@
-function get_serve_info(){
+var serveid = GetQueryString("id");
+if(serveid != null && serveid.toString().length >= 1) {
+	serveid = GetQueryString("id");
+	get_serve_info(serveid);
+}
+
+function get_serve_info(serveid){
 	$.ajax({
 		type: "get",
-		url: 'http://elife.com/RiChangBaoJie.php?',
+		url: 'http://elife.com/RiChangBaoJie.php?id='+serveid+'',
 		dataType: 'jsonp',
 		jsonp: "jsoncallback",
 		timeout: 15000,
 		success: function(data) {
 			if(data.ret) {
-				
+				show_serve_info(data.result);
+				$('#ordernow').click(function(){
+					if(data.username){
+						onorderclick(data.result);
+					}					
+					else{
+						location.href="../../debug/tmpl/login.html";
+					}
+				});
 			} else {
-				
+				console.log('failfail');
 			}
 		},
 		error: function(XMLHttpRequest, textStatus, errorThrown) {
@@ -24,18 +38,32 @@ function get_serve_info(){
 	});
 }
 
+function show_serve_info(result){
+	$('#serve_name').html(result.serve_title);
+	$('#serve_money').html(result.serve_const+'元/'+result.unit);
+	var discountmoney=parseInt(parseInt(result.serve_const)*result.serve_discount);
+	$('#serve_money_menber').html(discountmoney+'元/'+result.unit);
+}
 
-
-//$('#ordernow').click(function() {
-//	//是否登录
-//	var logininfo = get_serve_info(false);
-//	if(logininfo.username == ""){
-//		location.href="../../debug/tmpl/login.html";
-//	}else{
-//		//获取当前的服务类型，服务费用，
-//		
-//		
-//		
-//		location.href="../../debug/tmpl/place_order.html";
-//	}
-//});
+function onorderclick(data){
+	//把相关信息传到服务器，用session存起来
+	//“服务名称”，“服务费用”，“服务类型id”
+	//跳转到place_order页面
+	$.ajax({
+		type: "get",
+		url: 'http://elife.com/save_serve_info.php?serveid='+serveid+'&servename='+data.serve_title+'&cost='+data.serve_const+'',
+		dataType: 'jsonp',
+		jsonp: "jsoncallback",
+		timeout: 15000,
+		success: function(data) {
+			console.log(data);
+			location.href="../../debug/tmpl/place_order.html";
+		},
+		error: function(XMLHttpRequest, textStatus, errorThrown) {
+			ELife_UI.Toast.show('服务器繁忙，请稍后重试');
+			window.setTimeout(function() {
+				ELife_UI.Toast.hide();
+			}, 2000);
+		}
+	});
+}

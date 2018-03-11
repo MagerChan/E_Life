@@ -38,6 +38,18 @@
 	width: 45%;
 }
 
+#addr_yangshi div:nth-child(2){
+	width: 24%;
+}
+
+#addr_yangshi div:nth-child(3){
+	width: 48%;
+}
+
+#addr_yangshi div:nth-child(4){
+	width: 13%;
+}
+
 .placeorderfooter{
 	position: fixed;
 	bottom: 0;

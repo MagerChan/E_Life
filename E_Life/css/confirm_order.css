@@ -155,11 +155,18 @@
 	width: 40%;
 	height: 50px;
 	background: #00BEAE;
+	float: left;
+}
+
+.confirmfinally input{
+	width: 100%;
+	height: 50px;
+	background: none;
 	color: #FFFFFF;
 	text-align: center;
-	float: left;
 	font-size: 18px;
 }
+
 .confirmfinally p:first-child{
 	color: red;
 	font-size: 18px;

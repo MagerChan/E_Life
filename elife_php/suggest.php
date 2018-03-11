@@ -5,13 +5,16 @@
     $data = ["ret"=>false,"msg"=>''];
     $id=$_SESSION['userid'];
 
-    $content=$_GET['suggest_content'];
+    $content=$_GET['suggest'];
 
-    $data = get_serve($id,$content);
+    if($id){
+        $data = save_suggest($id,$content);
+    }
 
     echo $_GET['jsoncallback']."(".json_encode($data).")";//解决ajax跨域问题
+    
 
-    function get_serve($id,$content){
+    function save_suggest($id,$content){
         /*$hostname = "139.199.198.216";
         $dbname = "elife";
         $username = "Administrator";
@@ -27,7 +30,7 @@
             $_opts_values = array(PDO::ATTR_PERSISTENT=>true,PDO::ATTR_ERRMODE=>2,PDO::MYSQL_ATTR_INIT_COMMAND=>'SET NAMES utf8');//解决乱码问题
             $conn = new PDO("mysql:host=$hostname;dbname=$dbname", $username, $password,$_opts_values);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = "insert into `elife_suggest` (`user_id`,`content`,`time`) values ('$id','$content','$timestamp')";
+            $sql = "insert into `elife_suggestion` (`user_id`,`content`,`time`) values ('$id','$content','$timestamp')";
             $stmt = $conn->prepare($sql);
             $data['ret']=$stmt->execute();
             if (!$data["ret"]) {

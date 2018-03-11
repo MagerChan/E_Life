@@ -21,7 +21,7 @@
 					<div>服务时长(小时)</div>
 					<div id="servehour">
 						<div id="houradd">+</div>
-						<div id="hournum">1</div>
+						<div id="hournum">2</div>
 						<div id="hoursub" class="nouse">-</div>
 					</div>
 				</section>
@@ -34,9 +34,10 @@
 						<div id="auntsub" class="nouse">-</div>
 					</div>
 				</section>
-				<section class="orderitem">
+				<section class="orderitem" id="addr_yangshi">
 					<div><img/></div>
 					<div>服务地址</div>
+					<div id="addr_info_"></div>
 					<div id="serveaddr"><a href="FuWuDiZhi.html?page=order"><img/></a></div>
 				</section>
 				<section class="orderitem" id="addservetime">
@@ -71,7 +72,7 @@
 			<section class="order_whole_sec">
 				<div class="order_whole_">
 					<div>服务类型:</div>
-					<div id="c_order_type">日常保洁</div>
+					<div id="c_order_type">保洁</div>
 				</div>
 				<div class="order_whole_">
 					<div>服务地址:</div>
@@ -102,7 +103,7 @@
 						<p>支付全款</p>
 						<p>（包含预付费64元）</p>
 					</div>
-					<div>70元</div>
+					<div id="totalmoney"></div>
 				</div>
 				
 				
@@ -125,11 +126,11 @@
 	
 			<div class="confirmfinally">
 				<div>
-					<p>￥70</p>
+					<p id="confirm_money"></p>
 					<p>会员余额支付立减6元</p>
 				</div>
 				<div>
-					<input type="button" id="confirm_order" value="确认订单" disabled="true"/>
+					<input type="button" id="confirm_order" value="确认订单"/>
 				</div>			
 			</div>
 		</div>

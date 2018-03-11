@@ -112,12 +112,25 @@ function onitemClick(obj) {
 
 function onChooseAlbum(obj) {
 	chooseContent = $(obj).parent().parent().find('.addr_left').find('p:last-child').html();
-	/*把参数传回去*/
-	order_addr_info=chooseContent;
 	
-	console.log(order_addr_info);
-	
-	window.history.back();
+	//把服务地址传到服务器session存起来
+	$.ajax({
+		type: "get",
+		url: 'http://elife.com/save_addr_info.php?addr_info='+chooseContent+'',
+		dataType: 'jsonp',
+		jsonp: "jsoncallback",
+		timeout: 15000,
+		success: function(data) {
+			history.go(-1); //回退并且刷新
+			location.reload();
+		},
+		error: function(XMLHttpRequest, textStatus, errorThrown) {
+			ELife_UI.Toast.show('服务器繁忙，请稍后重试');
+			window.setTimeout(function() {
+				ELife_UI.Toast.hide();
+			}, 2000);
+		}
+	});
 }
 
 function onEditAlbum(obj,id) {

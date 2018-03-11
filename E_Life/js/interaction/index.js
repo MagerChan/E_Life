@@ -1,4 +1,4 @@
-function get_serve_info(flag){
+function get_serve_info(){
 	$.ajax(  
     {  
         type:'get',  
@@ -7,10 +7,10 @@ function get_serve_info(flag){
         jsonp:"jsoncallback", 
         timeout:15000,
         success  : function(data) { 
-        	if(flag){
-        		is_login(data.username); 
+        	if(data.username == ""){
+        		not_login();
         	}else{
-        		getUserInfo(data.username,data.user_id);
+        		is_login(data.username);
         	}
         },  
         error : function(XMLHttpRequest, textStatus, errorThrown) {  
@@ -27,10 +27,7 @@ function is_login(user){
 	$('#loginuser').css('display','block').html(user);
 }
 
-
-function getUserInfo(username,user_id){
-	return {
-		username:username,
-		user_id:user_id
-	};
+function not_login(){
+	$('#login_btn').css('display','block');
+	$('#loginuser').css('display','none');
 }

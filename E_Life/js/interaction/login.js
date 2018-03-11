@@ -66,7 +66,9 @@ function loginSuccess(){
 		
 		//页面跳转到首页，并且是登录状态,session
 		//location.href='../../debug/tmpl/index.html';
-		location.replace('../../debug/tmpl/index.html');
+		//location.replace('../../debug/tmpl/index.html');
+		history.go(-1); //回退并且刷新
+		location.reload();
 	},2000);
 }
 

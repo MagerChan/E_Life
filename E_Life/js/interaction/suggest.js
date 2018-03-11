@@ -1,5 +1,7 @@
+//get_serve_info(false);
+
 $('#suggestcontent').keyup(function(){
-	var content=($('#suggestcontent').val().length >20 && $('#suggestcontent').val().length <50) ? 1 : 0;
+	var content=($('#suggestcontent').val().length >20 && $('#suggestcontent').val().length <100) ? 1 : 0;
 	if(content){
 		btn_is_click(true,'#suggestbtn');
 	}else{
@@ -23,9 +25,6 @@ $('#suggestbtn').click(function(){
             }
         },  
         error : function(XMLHttpRequest, textStatus, errorThrown) {
-            console.log(XMLHttpRequest.readyState);
-            console.log(XMLHttpRequest.status);
-            console.log(textStatus);
             ELife_UI.Toast.show('服务器繁忙，请稍后重试！');
 			window.setTimeout(function(){
 				ELife_UI.Toast.hide();
@@ -42,9 +41,14 @@ function commitSuccess(){
 	},2000);
 }
 
-function commitFail{
-	ELife_UI.Toast.show('网络繁忙，请稍后重试');
+function commitFail(){
+	ELife_UI.Toast.show('请登录');
 	window.setTimeout(function(){
 		ELife_UI.Toast.hide();
-	},2000);
+		location.href='../../debug/tmpl/login.html';
+	},1500);
 }
+
+$('#suggestback').click(function(){
+	location.replace('../../debug/tmpl/index.html');
+});
