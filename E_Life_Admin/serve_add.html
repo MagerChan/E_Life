@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>易生活管理后台</title>
+		<link rel="stylesheet" href="css/base.css" />
+		<link rel="stylesheet" href="css/gri.css" />
+	</head>
+
+	<body>
+		<header class="header">易生活</header>
+		<section class="sidebar">
+			<a href="index.html" class="nav_itme">用户管理</a>
+			<a href="addr.html" class="nav_itme">用户地址</a>
+			<a href="order.html" class="nav_itme">订单管理</a>
+			<a href="evaluate.html" class="nav_itme">订单评价</a>
+			<a href="type.html" class="nav_itme">服务类型</a>
+			<a href="serve.html" class="nav_itme">服务信息</a>
+			<a href="suggest.html" class="nav_itme">用户建议</a>
+		</section>
+
+		<section class="content">
+			<div class="add_title">新增服务信息</div>
+			<div class="tmpl_edit">
+				<div class="input_item">
+					<span>服务名称:</span><input class="edit_box" id="servetitle_add" type="text">
+				</div>
+				<div class="input_item">
+					<span>服务简介:</span><input class="edit_box" id="servecontent_add" type="text">
+				</div>
+				<div class="input_item">
+					<span>服务单元价格:</span><input class="edit_box" id="servecost_add" type="text">
+				</div>
+				<div class="input_item">
+					<span>服务单位:</span><input class="edit_box" id="serveunit_add" type="text">
+				</div>
+				<div class="input_item">
+					<span>服务折扣:</span><input class="edit_box" id="servediscount_add" type="text">
+				</div>
+				<div class="input_item">
+					<span>服务图标路径:</span><input class="edit_box" id="serveicon_add" type="text">
+				</div>
+				<div class="input_item">
+					<span>类型id:</span><input class="edit_box" id="typeid_serve_add" type="text">
+				</div>
+				<div class="input_item">
+					<span>上下线:</span><input class="edit_box" id="serveoption_add" type="text">
+				</div>
+			</div>
+			<div class="submit_btn" id="serve_submit">提交</div>
+		</section>
+
+		<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+		<script type="text/javascript" src="js/serve_add.js"></script>
+	</body>
+
+</html>

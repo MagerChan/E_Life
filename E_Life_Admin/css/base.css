@@ -57,11 +57,6 @@ input{
 }
 
 /* 所有以icon开头的class共有的属性 */
-[class^="icon_"]{
-	background: url("../images/sprites.png") no-repeat;
-	background-size: 200px 200px;
-}
-
 .m_l10{
 	margin-left: 10px;
 }
@@ -95,6 +90,7 @@ input{
 	font-weight: 700;
 	font-size: 24px;
 	font-family: "微软雅黑";
+	z-index: 100;
 }
 
 .sidebar{
@@ -125,25 +121,222 @@ input{
 }
 
 .content{
-	width: 75%;
+	position: absolute;
+	width: 78%;
 	background: #FEFEFE;
 	float: left;
 	margin-top: 70px;
 	margin-left: 21%;
 }
 
+#elife_msg_box{
+	background: rgba(0,0,0,0.6);
+}
+
+.elife_messagebox{
+    text-align: left;
+    padding: 1.2em 20px .5em;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: none;
+}
+
+.elife_messagebox_content {
+    position: fixed;
+    z-index: 13;
+    width: 80%;
+    top: 30%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-color: rgba(0,0,0,0.4);
+    text-align: center;
+    border-radius: 3px;
+}
+
+.messagebg{
+	background: #FFFFFF;
+}
+
+.elife_messagebox_title{
+    font-weight: 400;
+    font-size: 17px;
+    padding: 1.2em 20px .5em;
+}
+
+.elife_messagebox_info{
+    padding: 2em 20px 2em;
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+}
+
+.contentcolor{
+	color: #000000;
+}
+
+.elife_messagebox_ft {
+    position: relative;
+    line-height: 42px;
+    margin-top: 20px;
+    font-size: 17px;
+}
+
+.elife_messagebox_ft a {
+    display: block;
+    color: #353535;
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    position: relative;
+    float: left;
+    width: 50%;
+}
+
+.elife_messagebox_ft a:active,
+.elife_messagebox_ft a:hover {
+    text-decoration: none;
+    background: #EEE;
+}
+
+.elife_messagebox_ft:after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 1px;
+    border-top: 1px solid #9E9E9E;
+    -webkit-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scaleY(0.5);
+    -ms-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+}
+
+.elife_messagebox_ft a:after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    border-left: 1px solid #9E9E9E;
+    -webkit-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scaleX(0.5);
+    -ms-transform: scaleX(0.5);
+    transform: scaleX(0.5);
+}
+.elife_messagebox_ft a:first-child:after {
+    display: none;
+}
+
+.elife_messagebox_ft a:last-child {
+    float: none;
+    color: #00BEAE;
+    width: auto;
+    overflow: hidden;
+    *zoom: 1;
+}
+
+.dialog_ui{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background: rgba(0,0,0,0.2);
+	z-index: 1000;
+	display: none;
+}
+
+.dialog_title{
+	position: relative;
+	background: #eee;
+	width: 100%;
+	height: 30px;
+	border-bottom:1px solid #aaaaaa;
+}
+
+.dialog_title span{
+	line-height: 30px;
+	font-weight: 700;
+	margin-left: 10px;
+}
+.dialog_title div{
+	width: 20px;
+	height: 20px;
+	border: 1px solid #666;
+	margin-top: 5px;
+	float: right;
+	margin-right: 10px;
+}
+
+.edit_dialog{
+	position: absolute;
+	background: #fff;
+	width: 500px;
+	height: 600px;
+	left: 50%;
+	margin-left: -250px;
+	vertical-align: middle;
+	margin-top: 70px;
+	border: 1px solid #666;
+}
+
+.tmpl_edit{
+	position: relative;
+	padding: 8px 10px;
+	width: 100%;
+	border-bottom: 1px solid #aaaaaa;
+}
+
+.dialog_btn{
+	width: 100%;
+	height: 40px;
+	margin-top: 20px;
+}
+
+.confirm,.close{
+	width: 40px;
+	height: 24px;
+	line-height: 24px;
+	text-align: center;
+	float: left;
+	border: 1px solid #AAAAAA;
+	background: #eee;
+	position: relative;
+}
+.confirm{
+	left: 50%;
+	margin-left: -40px;
+}
+.close{
+	left: 50%;
+	margin-left: 20px;
+}
+
 .input_item{
     text-align:left;
     margin-bottom: 10px;
-    position: relative
+    position: relative;
+    width: 100%;
+    height: 30px;
 }
 
 .input_item span{
     margin: auto;
     display: inline-block;
     zoom: 1;
-    width: 70px;
+    width: 120px;
     color: #333;
+    line-height: 30px;
 }
 
 .input_item input{
@@ -152,7 +345,11 @@ input{
     padding-left: 2px;
     font-size: 1em;
     color: #333;
-    width: 300px;
+    width: 340px;
+    line-height: 30px;
+    border: 1px solid #CCCCCC;
+    box-shadow: inset 0px 0px 3px #CCCCCC;
+    
 }
 
 .input_item textarea{
@@ -177,41 +374,45 @@ input{
     width: 256px;
 }
 
-.tmpl_edit_icon{
-    margin-left: 4px;
+.icon_class{
+	width: 15px;
+	height: 15px;
 }
 
-#tmpl_apps_wrapper{
-    padding-left: 70px;
-    width: 300px;
-    display: inline-block
+.add_btn{
+	width: 100%;
+	height: 30px;
+	margin-top: 10px;
+	margin-bottom: 20px;
 }
 
-.appid_text{
-    float: left;
-    /* width: 75px; */
-    margin-right:15px;
-    color: #0088cc;
-    font-size: 1.1em;
+.add_btn a{
+	display: block;
+	width: 180px;
+	line-height: 30px;
+	color: #fff;
+	font-size: 18px;
+	font-weight: 600;
+	border: 1px solid #363d4a;
+	text-align: center;
+	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #67738D), color-stop(1, #454E5F));
 }
 
-.appid_text a{
-    cursor:pointer;
-    color: #0088cc;
+.add_title{
+	width: 180px;
+	line-height: 30px;
+	color: #000;
+	font-size: 18px;
+	font-weight: 600;
+	margin-left: 10px;
 }
 
-#tmpl_edit{
-    display: none;
-}
-
-.tmpl_tag_tips{
-    color: #0088cc;
-    padding-left: 70px;
-    padding-top: 10px;
-}
-
-.tmpl_appid_selectall{
-    color: #036CA0;
-    padding-left: 70px;
-    cursor:pointer;
+.submit_btn{
+	width: 100px;
+	line-height: 30px;
+	border: 1px solid #AAAAAA;
+	text-align: center;
+	margin-top: 20px;
+	margin-left: 10px;
+	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #F1F1F1), color-stop(1, #DFDFDF));
 }

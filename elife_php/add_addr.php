@@ -14,10 +14,6 @@
     echo $_GET['jsoncallback']."(".json_encode($data).")";//解决ajax跨域问题
 
     function insert_addr($name,$addr,$userid,$tel){
-    	/*$hostname = "139.199.198.216";
-	    $dbname = "elife";
-	    $username = "Administrator";
-	    $password = "beautiful@123";*/
         $hostname = "localhost";
         $dbname = "elife";
         $username = "root";

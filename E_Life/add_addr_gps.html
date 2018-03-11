@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+		<title>易生活</title>
+		<link rel="stylesheet" type="text/css" href="../css/main.min.css">
+		<script type="text/javascript" src="../js/thirdpart/zepto.min.js"></script>
+		<script type="text/javascript" src="../js/main.min.js" ></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=3rn8kiB7TrH7pUnXUoqmlkN9LEwXAoXD"></script>
+	</head>
+
+	<body>
+		<div class="layout">
+			<header class="header">
+				<div class="header_box_order">
+					<div class="p1">添加服务地址</div>
+					<a href="#" class="back"><img src="#" /></a>
+				</div>
+			</header>
+
+			<form method="post" action="#" id="gps_attr">
+				<div class="gps_attr_name">
+					<img src="#" />
+					<input type="text" placeholder="请输入小区或大厦名称" />
+				</div>
+				<div id="allmap" class="m_t10"></div>
+				<div id="your_addr" class="m_t10">
+					<p>你所在地点</p>
+					<p></p>
+				</div>
+				
+				<section id="conf_save">
+					<input type="submit" value="确认" />	
+				</section>	
+			</form>
+		</div>
+	</body>
+
+</html>
+
+<script type="text/javascript">
+	// 百度地图API功能
+	//GPS坐标
+	var province = 0;
+	var city = 0;
+	var district = 0;
+	var street = 0;
+	var streetNumber = 0;
+
+	navigator.geolocation.getCurrentPosition(showPosition); //定位 
+	function showPosition(position) {
+		var currentLat = position.coords.latitude;
+		var currentLon = position.coords.longitude;
+		var ggPoint = new BMap.Point(currentLon, currentLat);
+
+		//地图初始化
+		var bm = new BMap.Map("allmap");
+		bm.enableScrollWheelZoom(true);
+		bm.centerAndZoom(ggPoint, 15);
+		bm.addControl(new BMap.NavigationControl());
+
+		//添加gps marker和label
+		$('#your_addr p:nth-child(2)').html("无法定位你所在位置");
+
+		//坐标转换完之后的回调函数
+		translateCallback = function(data) {
+			if(data.status === 0) {
+				var marker = new BMap.Marker(data.points[0]);
+				bm.addOverlay(marker);
+				/*var label = new BMap.Label("你所在位置", {
+					offset: new BMap.Size(20, -10)
+				});
+				marker.setLabel(label); //添加百度label*/
+				var gc = new BMap.Geocoder(); //初始化，Geocoder类
+				gc.getLocation(data.points[0], function(rs) { //getLocation函数用来解析地址信息，分别返回省市区街等
+					var addComp = rs.addressComponents;
+					province = addComp.province; //获取省份
+					city = addComp.city; //获取城市
+					district = addComp.district; //区
+					street = addComp.street; //街
+					streetNumber = addComp.streetNumber;
+					$('#your_addr p:nth-child(2)').html(district+street+streetNumber);
+				});
+
+				bm.setCenter(data.points[0]);
+			}
+		}
+
+		setTimeout(function() {
+			var convertor = new BMap.Convertor();
+			var pointArr = [];
+			pointArr.push(ggPoint);
+			convertor.translate(pointArr, 1, 5, translateCallback)
+		}, 1000);
+	}
+</script>

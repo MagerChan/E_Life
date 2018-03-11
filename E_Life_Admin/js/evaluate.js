@@ -1,9 +1,8 @@
 var tmpl_info = [];
-var appid_tag = [];
 
-function get_user_info(){
+function get_evaluate_info(){
     $.ajax({
-        url: 'http://elife.admin.com/index.php',
+        url: 'http://elife.admin.com/evaluate.php',
         type: 'GET',
         dataType: 'json',
         timeout: 15000,
@@ -17,25 +16,14 @@ function get_user_info(){
             }else {
                 console.log('没有模板数据');
             }
-
-			/*if(data.ret) {
-				if(data.list.ret){
-					tmpl_info=data.list;
-                	tmpl_create_table(data.list.list);
-				}else{
-					console.log('没有模板数据');
-				} 
-            }else {
-                location.href='./login.html';
-            }*/
         }
     });
 }
 
 
 function tmpl_create_table(tmpl_info){
-    $("#index_list").empty();
-    var root = document.getElementById("index_list");
+    $("#evaluate_list").empty();
+    var root = document.getElementById("evaluate_list");
 
     for (var i=0; i<tmpl_info.length; i++){
         var tr = document.createElement("tr");
@@ -44,17 +32,20 @@ function tmpl_create_table(tmpl_info){
             <div class="col1" style="width: 100%; height: 100%;text-align:center;">'+tmpl_info[i]["_id"]+'</div>\
         </td>\
         <td>\
-            <div style="width: 100%; height: 100%;text-align:center;">'+tmpl_info[i]["tel"]+'</div>\
+            <div style="width: 100%; height: 100%;text-align:center;">'+tmpl_info[i]["user_id"]+'</div>\
         </td>\
         <td>\
-            <div style="width: 100%; height: 100%;text-align:center;">'+tmpl_info[i]["rank"]+'</div>\
+            <div style="width: 100%; height: 100%;text-align:center;">'+tmpl_info[i]["order_id"]+'</div>\
         </td>\
         <td>\
-            <div style="width: 100%; height: 100%;text-align:center;">'+tmpl_info[i]["createtime"]+'</div>\
+            <div style="width: 100%; height: 100%;text-align:center;">'+tmpl_info[i]["content"]+'</div>\
+        </td>\
+        <td>\
+            <div style="width: 100%; height: 100%;text-align:center;">'+tmpl_info[i]["time"]+'</div>\
         </td>\
         <td>\
             <div style="width: 100%; height: 100%;text-align:center;">\
-                <a class="tmpl_change_status" title="点击删除用户信息"><img class="icon_class" src="./img/delete.png"/> </a>\
+                <a class="tmpl_change_status" title="点击删除订单评价信息"><img class="icon_class" src="./img/delete.png"/></a>\
             </div>\
         </td>';
         $(root).append(tr);
@@ -66,19 +57,20 @@ function tmpl_create_table(tmpl_info){
 }
 
 function onDelete(obj){
-	var user_id=tmpl_info[$(obj).data('tmpl_info_pos')]['_id'];
+	var evaluate_id=tmpl_info[$(obj).data('tmpl_info_pos')]['_id'];
 	ELife_UI.Message.show({
 		title: '',
-		message: '确定要删除该用户吗?',
+		message: '确定要删除该订单评价吗?',
 		ok: function() {
 			$.ajax({
-				url: 'http://elife.admin.com/index_del.php?user_id='+user_id+'',
+				url: 'http://elife.admin.com/evaluate_del.php?evaluate_id='+evaluate_id+'',
 				type: 'GET',
 				dataType: 'json',
 				timeout: 15000,
 				success: function(data) {
 					if(data.ret) {
-						get_user_info();
+						get_evaluate_info();
+						console.log('delete success');
 					} else {
 						ELife_UI.Toast.show('网络繁忙,稍后重试');
 						window.setTimeout(function() {

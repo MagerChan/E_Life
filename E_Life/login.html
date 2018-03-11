@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+		<title>易生活</title>
+		<link rel="stylesheet" type="text/css" href="../css/main.min.css">
+	</head>
+
+	<body>
+		<div class="layout" id="login_">
+			<header class="header">
+				<div class="header_box_order">
+					<div class="p1">快速登录</div>
+					<a href="javascript:void(0);" class="login_back" id="loginbacktoindex"><div></div></a>
+				</div>
+			</header>
+			
+			<section id="login_sec" class="log_reg_sec">
+				<p>为了确保服务质量，请先验证您的手机</p>
+				
+				<div id="login">
+					<div id="tel" class="login">
+						<div class="loginitem"><span>手机号</span></div>
+						<div class="telnum"><input id="input_tel" type="tel" maxlength="11" value=""/></div>
+						<div class="forgetpaw"><a href="javascript:void(0);" id="gotoreg">立即注册</a></div>
+					</div>
+					
+					<div id="paw_login" class="login">
+						<div class="loginitem"><span>密码</span></div>
+						<div class="telnum"><input id="input_pwd" type="password" maxlength="11" value=""/></div>
+						<div class="forgetpaw"><a href="#">忘记密码</a></div>
+					</div>
+					
+					<input type="button" value="立即登录" id="loginbtn"  disabled="true"/>
+				</div>
+
+				<p>点击-立即登录，即表示您同意<span>《易生活使用协议》</span></p>
+			</section>
+		</div>
+		
+		<div class="layout" id="register_">
+			<header class="header">
+				<div class="header_box_order">
+					<div class="p1">快速注册</div>
+					<a href="javascript:void(0);" class="login_back" id="reg_back"><div></div></a>
+				</div>
+			</header>
+			
+			<section id="register_sec" class="log_reg_sec">
+				<p>欢迎注册易生活</p>
+				
+				<div id="register">
+					<div id="regi_tel" class="login">
+						<div class="loginitem regitem"><span>手机号</span></div>
+						<div class="telnum"><input id="input_reg_tel" type="tel" maxlength="11" value=""/></div>
+					</div>
+					
+					<div id="regi_pass" class="login">
+						<div class="loginitem regitem"><span>密码</span></div>
+						<div class="telnum"><input id="input_reg_pwd" type="password" maxlength="16" value=""/></div>
+					</div>
+					
+					<div id="regi_pass_" class="login">
+						<div class="loginitem regitem"><span>确认密码</span></div>
+						<div class="telnum"><input id="input_reg_cp" type="password" maxlength="16" value=""/></div>
+					</div>
+					
+					
+					<input type="button" value="立即注册" id="regiterbtn" disabled="true"/>
+				</div>
+			</section>
+		</div>
+		
+		<script type="text/javascript" src="../js/thirdpart/zepto.min.js"></script>
+		<script type="text/javascript" src="../js/interaction/login.min.js" ></script>
+		<script type="text/javascript" src="../js/interaction/register.min.js" ></script>
+		<script type="text/javascript" src="../js/main.min.js" ></script>
+	</body>
+
+</html>

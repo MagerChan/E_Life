@@ -1,0 +1,68 @@
+#gps_attr{
+	width: 100%;
+	margin-top: 70px;
+}
+
+#gps_attr img{
+	width: 20px;
+	height: 20px;
+	position: absolute;	
+	top: 10px;
+	left: 10px;
+}
+
+#gps_attr input{
+	width: 100%;
+	height: 40px;
+	background: #FFFFFF;
+	font-family: "微软雅黑";
+	padding-left: 40px;
+}
+
+
+#allmap{
+	width: 100%;
+	height: 200px;
+}
+
+#your_addr{
+	width: 100%;
+	height: 80px;
+	background: #FFFFFF;
+	border: 1px solid #E0E0E0;
+}
+
+#your_addr p{
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	color: #808080;
+	font-family: "微软雅黑";
+	font-size: 16px;
+}
+
+#your_addr p:first-child{
+	padding-left: 10px;
+}
+#your_addr p:last-child{
+	padding-left: 40px;
+	border-top: 1px solid #E0E0E0;
+}
+
+#conf_save{
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 50px;
+}
+
+#conf_save input{
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	background: #00BEAE;
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 18px;
+	padding: 0;
+}

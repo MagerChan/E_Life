@@ -1,40 +1,32 @@
 <?php
-	ini_set("error_reporting","E_ALL & ~E_NOTICE");
-	//session_start();
 	header("Access-Control-Allow-Origin:*");
 	header("Access-Control-Allow-Methods:POST,GET");
-	
-    /*$tmpl = array('ret'=>false,'list'=>'');
+	session_start();
+    $tmpl = array();
     
-    if($_SESSION['admin']){
-    	$tmpl['ret']=true;
-    	$tmpl['list'] = get_template();
-    }
-    $tmpl['ttt']=$_SESSION['admin'];*/
-    $tmpl=array();
-    $tmpl = get_template();
+    $user_id=$_GET['user_id'];
+    /*if($_SESSION['tel']){
+    	$tmpl = get_template($user_id);
+    }*/
+    $tmpl = get_template($user_id);
     echo json_encode($tmpl);
     
-    function get_template(){
+    function get_template($user_id){
         $hostname = "localhost";
         $dbname = "elife";
         $username = "root";
         $password = "";
-        //$data = array('ret'=>false,'list'=>'');
-        $data=array();
+        $data = array("ret"=>false, "msg"=>"");
 
         try {
             $_opts_values = array(PDO::ATTR_PERSISTENT=>true,PDO::ATTR_ERRMODE=>2,PDO::MYSQL_ATTR_INIT_COMMAND=>'SET NAMES utf8');
             $conn = new PDO("mysql:host=$hostname;dbname=$dbname", $username, $password,$_opts_values);
             $conn->setAttribute(PDO::ERRMODE_EXCEPTION, PDO::MYSQL_ATTR_USE_BUFFERED_QUERY);
-            $sql = "SELECT * FROM elife_user";
+            $sql = "delete FROM elife_user where _id=$user_id";
             $stmt = $conn->prepare($sql);
-            $stmt->execute();
-            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            if (count($result)){
-            	/*$data['ret']=true;
-                $data['list'] = $result;*/ 
-                $data=$result;
+            $data['ret']=$stmt->execute();
+            if (!$data["ret"]) {
+                $data["msg"] = $stmt->errorInfo();
             }            
         }
         catch(PDOException $e)

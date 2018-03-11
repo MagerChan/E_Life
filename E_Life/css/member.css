@@ -1,0 +1,113 @@
+.memberbox{
+	width: 100%;
+	height: 100px;
+	background: #FFFFFF;
+	margin: 15px auto;
+	position: relative;
+	top: 70px;
+	padding: 20px;
+}
+
+.icon_pay{
+	width: 10%;
+	float: left;
+}
+/*.icon_pay > div{
+	position: absolute;
+	width: 20px;
+	height: 30px;
+	overflow: hidden;
+	position: absolute;
+	background: url('../../debug/images/sprites.png') no-repeat;
+}*/
+
+#icon_pay_1{
+	position: relative;
+	width: 20px;
+	height: 30px;
+	top: 0px;
+	left: 0px;
+	float: left;
+	background: url('../../debug/images/sprites.png') no-repeat;
+	background-position: -20px 0;
+	border: 0;
+	border-style: none;
+}
+#icon_pay_2{
+	position: relative;
+	width: 20px;
+	height: 30px;
+	top: 0px;
+	left: 0px;
+	float: left;
+	background: url('../../debug/images/sprites.png') no-repeat;
+	background-position: -20px -30px;
+	border: 0;
+	border-style: none;
+}
+#icon_pay_3{
+	position: relative;
+	width: 20px;
+	height: 30px;
+	top: 0px;
+	left: 0px;
+	float: left;
+	background: url('../../debug/images/sprites.png') no-repeat;
+	background-position: -20px -90px;
+	border: 0;
+	border-style: none;
+}
+#icon_pay_4{
+	position: relative;
+	width: 20px;
+	height: 30px;
+	top: 0px;
+	left: 0px;
+	float: left;
+	background: url('../../debug/images/sprites.png') no-repeat;
+	background-position: -20px -60px;
+	border: 0;
+	border-style: none;
+}
+#icon_pay_5{
+	position: relative;
+	width: 20px;
+	height: 30px;
+	top: 0px;
+	left: 0px;
+	float: left;
+	background: url('../../debug/images/sprites.png') no-repeat;
+	background-position: -20px -120px;
+	border: 0;
+	border-style: none;
+}
+
+.member_rank{
+	width: 60%;
+	float: left;
+}
+.member_rank .p_title{
+	width: 100%;
+	color: #000000;
+	font-size: 20px;
+}
+.member_rank .p_desc{
+	width: 100%;
+	color: #999;
+	font-size: 16px;
+	margin-top: 10px;
+}
+
+.member_pay{
+	width: 30%;
+	float: left;
+	height: 35px;
+	line-height: 35px;
+	border: 1px solid #00BEAF;
+	border-radius: 5px;
+	color: #00BEAF;
+	text-align: center;
+}
+
+
+

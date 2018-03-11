@@ -1,0 +1,256 @@
+/* 重置css的样式 */
+*,
+::before,
+::after{
+	/* 选择所有的标签 */
+	margin: 0;
+	padding: 0;
+
+	/* 清除移动端默认的 点击高亮效果*/
+	-webkit-tap-highlight-color:transparent;
+
+	/* 设置所有的都是以边框开始计算宽度   百分比*/
+	-webkit-box-sizing:border-box;
+	box-sizing: border-box;
+}
+
+body{
+	font-size: 14px;
+	font-family: "MicroSoft YaHei",sans-serif;/* 没有就是用默认的 */
+	color: #333;
+}
+
+a{
+	color: #333;
+	text-decoration:none;
+}
+a:hover{
+	text-decoration: none;
+}
+
+ul,ol{
+	list-style: none;
+}
+
+input{
+	border: none;
+	outline: none;
+	-webkit-appearance:none;/* 清除移动端默认的表单样式 */
+}
+
+/* common css */
+.f_left{
+	float: left;
+}
+.f_right{
+	float: right;
+}
+
+.clearfix::before,
+.clearfix::after{
+	content: "";
+	height: 0;
+	line-height: 0;
+	display: block;
+	visibility: hidden;
+	clear: both;
+}
+
+/* 所有以icon开头的class共有的属性 */
+[class^="icon_"]{
+	background: url("../images/sprites.png") no-repeat;
+	background-size: 200px 200px;
+}
+
+.m_l10{
+	margin-left: 10px;
+}
+
+.m_l30{
+	margin-left: 30px;
+}
+
+.m_r10{
+	margin-right: 10px;
+}
+
+.m_t10{
+	margin-top: 10px;
+}
+
+.m_b10{
+	margin-bottom: 10px;
+}
+
+.header{
+	height: 60px;
+}
+.header_box_order{
+	background: #FFFFFF;
+	border-bottom: 1px solid #00BEAF;
+	width: 100%;
+	height: 60px;
+}
+.header_box_order .p1{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 60px;
+	line-height: 40px;
+	padding: 10px 0;
+	color: #000000;
+	font-size: 20px;
+	text-align: center;
+}
+.header_box_order .p2{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 60px;
+	line-height: 40px;
+	padding: 10px 20px 10px 0;
+	color: #00BEAF;
+	font-size: 15px;
+	text-align: right;
+}
+
+.back{
+	position: absolute;
+	display: block;
+}
+
+.back div{
+	width: 20px;
+	height: 20px;
+}
+
+.m_t70{
+	margin-top: 70px;
+}
+
+.dis_none{
+	display: none;
+}
+
+.dis_block{
+	display: block;
+}
+
+#elife_msg_box{
+	background: rgba(0,0,0,0.6);
+}
+
+.elife_messagebox{
+    text-align: left;
+    padding: 1.2em 20px .5em;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: none;
+}
+
+.elife_messagebox_content {
+    position: fixed;
+    z-index: 13;
+    width: 80%;
+    top: 30%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-color: rgba(0,0,0,0.4);
+    text-align: center;
+    border-radius: 3px;
+}
+
+.messagebg{
+	background: #FFFFFF;
+}
+
+.elife_messagebox_title{
+    font-weight: 400;
+    font-size: 17px;
+    padding: 1.2em 20px .5em;
+}
+
+.elife_messagebox_info{
+    padding: 2em 20px 2em;
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+}
+
+.contentcolor{
+	color: #000000;
+}
+
+.elife_messagebox_ft {
+    position: relative;
+    line-height: 42px;
+    margin-top: 20px;
+    font-size: 17px;
+}
+
+.elife_messagebox_ft a {
+    display: block;
+    color: #353535;
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    position: relative;
+    float: left;
+    width: 50%;
+}
+
+.elife_messagebox_ft a:active,
+.elife_messagebox_ft a:hover {
+    text-decoration: none;
+    background: #EEE;
+}
+
+.elife_messagebox_ft:after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 1px;
+    border-top: 1px solid #9E9E9E;
+    -webkit-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scaleY(0.5);
+    -ms-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+}
+
+.elife_messagebox_ft a:after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    border-left: 1px solid #9E9E9E;
+    -webkit-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scaleX(0.5);
+    -ms-transform: scaleX(0.5);
+    transform: scaleX(0.5);
+}
+.elife_messagebox_ft a:first-child:after {
+    display: none;
+}
+
+.elife_messagebox_ft a:last-child {
+    float: none;
+    color: #00BEAE;
+    width: auto;
+    overflow: hidden;
+    *zoom: 1;
+}
+
