@@ -1,0 +1,217 @@
+/* 重置css的样式 */
+*,
+::before,
+::after{
+	/* 选择所有的标签 */
+	margin: 0;
+	padding: 0;
+
+	/* 清除移动端默认的 点击高亮效果*/
+	-webkit-tap-highlight-color:transparent;
+
+	/* 设置所有的都是以边框开始计算宽度   百分比*/
+	-webkit-box-sizing:border-box;
+	box-sizing: border-box;
+}
+
+body{
+	font-size: 14px;
+	font-family: "MicroSoft YaHei",sans-serif;/* 没有就是用默认的 */
+	color: #333;
+}
+
+a{
+	color: #333;
+	text-decoration:none;
+}
+a:hover{
+	text-decoration: none;
+}
+
+ul,ol{
+	list-style: none;
+}
+
+input{
+	border: none;
+	outline: none;
+	-webkit-appearance:none;/* 清除移动端默认的表单样式 */
+}
+
+/* common css */
+.f_left{
+	float: left;
+}
+.f_right{
+	float: right;
+}
+
+.clearfix::before,
+.clearfix::after{
+	content: "";
+	height: 0;
+	line-height: 0;
+	display: block;
+	visibility: hidden;
+	clear: both;
+}
+
+/* 所有以icon开头的class共有的属性 */
+[class^="icon_"]{
+	background: url("../images/sprites.png") no-repeat;
+	background-size: 200px 200px;
+}
+
+.m_l10{
+	margin-left: 10px;
+}
+
+.m_l30{
+	margin-left: 30px;
+}
+
+.m_r10{
+	margin-right: 10px;
+}
+
+.m_t10{
+	margin-top: 10px;
+}
+
+.m_b10{
+	margin-bottom: 10px;
+}
+
+.header{
+	position: fixed;
+	width: 100%;
+	height: 60px;
+	background: #1084d4;
+	padding: 0 1em;
+	margin: 0;
+	border: 0;
+	line-height: 60px;
+	color: #fff;
+	font-weight: 700;
+	font-size: 24px;
+	font-family: "微软雅黑";
+}
+
+.sidebar{
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 20%;
+	height: 100%;
+	float: left;
+	margin-top: 60px;
+	background: #F3F3F3;
+	border-right: 1px solid #CCCCCC;
+}
+
+.nav_itme{
+	width: 100%;
+	height: 34px;
+	line-height: 34px;
+	padding-left: 10px;
+	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #efeff0), color-stop(1, #ffffff));
+	border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #c8c8cb;
+    border-left: none;
+    color: #333;
+    display: block;
+    font-weight: normal;
+    font-size: 1em;
+}
+
+.content{
+	width: 75%;
+	background: #FEFEFE;
+	float: left;
+	margin-top: 70px;
+	margin-left: 21%;
+}
+
+.input_item{
+    text-align:left;
+    margin-bottom: 10px;
+    position: relative
+}
+
+.input_item span{
+    margin: auto;
+    display: inline-block;
+    zoom: 1;
+    width: 70px;
+    color: #333;
+}
+
+.input_item input{
+    margin: auto;
+    display: inline-block;
+    padding-left: 2px;
+    font-size: 1em;
+    color: #333;
+    width: 300px;
+}
+
+.input_item textarea{
+    margin: auto;
+    display: inline-block;
+    padding-left: 2px;
+    font-size: 1em;
+    color: #333;
+    width: 300px;
+}
+
+.input_item select{
+    margin: auto;
+    display: inline-block;
+    padding-left: 2px;
+    font-size: 1em;
+    color: #333;
+    width: 310px;
+}
+
+.edit_box{
+    width: 256px;
+}
+
+.tmpl_edit_icon{
+    margin-left: 4px;
+}
+
+#tmpl_apps_wrapper{
+    padding-left: 70px;
+    width: 300px;
+    display: inline-block
+}
+
+.appid_text{
+    float: left;
+    /* width: 75px; */
+    margin-right:15px;
+    color: #0088cc;
+    font-size: 1.1em;
+}
+
+.appid_text a{
+    cursor:pointer;
+    color: #0088cc;
+}
+
+#tmpl_edit{
+    display: none;
+}
+
+.tmpl_tag_tips{
+    color: #0088cc;
+    padding-left: 70px;
+    padding-top: 10px;
+}
+
+.tmpl_appid_selectall{
+    color: #036CA0;
+    padding-left: 70px;
+    cursor:pointer;
+}
