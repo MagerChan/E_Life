@@ -8,7 +8,6 @@
 		<link rel="stylesheet" type="text/css" href="css/base.css">
 		<link rel="stylesheet" type="text/css" href="css/index.css">
 		<link rel="stylesheet" href="css/add_addr_gps.css" />
-		<link rel="stylesheet" href="css/add_addr_gps.css" />
 		<link rel="stylesheet" href="css/add_addr.css" />
 		<script type="text/javascript" src="js/zepto.min.js"></script>
 		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=3rn8kiB7TrH7pUnXUoqmlkN9LEwXAoXD"></script>
@@ -65,7 +64,7 @@
 		bm.addControl(new BMap.NavigationControl());
 
 		//添加gps marker和label
-		$('#your_addr p:nth-child(2)').html("你所在位置（错误）");
+		$('#your_addr p:nth-child(2)').html("无法定位你所在位置");
 
 		//坐标转换完之后的回调函数
 		translateCallback = function(data) {
