@@ -1,0 +1,15 @@
+.header_about{
+	width:100%;
+	height: 200px;
+	background: #00BEAE;
+}
+.login_icon{
+	width: 100%;
+	height: 100px;
+	margin: 0 auto;
+}
+.login_icon > img{
+	width: 100px;
+	height: 100px;
+	margin: 0 auto;
+}

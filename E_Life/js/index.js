@@ -37,8 +37,7 @@ function head(){
 		}
 
 		/*把透明度设置上去*/
-		searchBox.style.background="rgba(255,255,255,"+opacity+")";
-		searchBox.style.borderBottom="rgba(0,190,175,"+opacity+")";
+		searchBox.style.background="rgba(0,190,175,"+opacity+")";
 		appnameBox.style.color="rgba(51,51,51,"+opacity+")";
 	}
 }

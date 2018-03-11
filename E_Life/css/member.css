@@ -1,0 +1,48 @@
+.memberbox{
+	width: 100%;
+	height: 100px;
+	background: #FFFFFF;
+	margin: 15px auto;
+	position: relative;
+	top: 70px;
+	padding: 20px;
+}
+
+.icon_pay{
+	width: 10%;
+	float: left;
+}
+.icon_pay > img{
+	width: 20px;
+	height: 30px;
+}
+
+.member_rank{
+	width: 60%;
+	float: left;
+}
+.member_rank .p_title{
+	width: 100%;
+	color: #000000;
+	font-size: 20px;
+}
+.member_rank .p_desc{
+	width: 100%;
+	color: #999;
+	font-size: 16px;
+	margin-top: 10px;
+}
+
+.member_pay{
+	width: 30%;
+	float: left;
+	height: 35px;
+	line-height: 35px;
+	border: 1px solid #00BEAF;
+	border-radius: 5px;
+	color: #00BEAF;
+	text-align: center;
+}
+
+
+

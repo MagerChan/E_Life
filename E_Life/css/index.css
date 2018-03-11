@@ -26,7 +26,6 @@ body{
 	min-width: 300px;/*为了更好的布局*/
 	margin: 0 auto;
 	background-color: rgba(255,255,255,0);
-	border-bottom-color: rgba(0,190,175,0);
 	height: 40px;
 	position: relative;
 }
@@ -47,7 +46,7 @@ body{
 	left: 30px;
 	top: 0px;
 	font-size: 18px;
-	color: #00BDB0;
+	color: #FFFFFF;
 }
 
 .location img{
@@ -348,3 +347,38 @@ E:nth-of-type(n)选择同类型的同级的 第n个元素
 	text-align: center;
 	padding: 0;
 }
+
+
+#footer{
+	width: 100%;
+	height: 80px;
+	background:#FFFFFF;
+	border-top: 1px solid #e0e0e0;
+	position: fixed;/* 是以window最外层容器计算 */
+	left: 0;
+	bottom: 0;
+	z-index: 1000;
+}
+
+.tab{
+	width: 25%;
+	height: 100%;
+	padding: 10px 0;
+	float: left;
+}
+.index_icon{
+	width: 40px;
+	height: 40px;
+	margin: 0 auto;
+	display: block;
+}
+.tab p{
+	width: 100%;
+	height: 16px;
+	line-height: 16px;
+	margin-top: 4px;
+	text-align: center;
+	font-size: 14px;
+	color: #333333;
+}
+
