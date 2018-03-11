@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1">
+		<title>易生活</title>
+		<link rel="stylesheet" href="../css/main.min.css">
+		<script src="../js/thirdpart/zepto.min.js"></script>
+		<script src="../js/main.min.js"></script>
+		<script src="http://api.map.baidu.com/api?v=2.0&ak=3rn8kiB7TrH7pUnXUoqmlkN9LEwXAoXD"></script>
+	</head>
+
+	<body>
+		<div class="layout">
+			<header class="header">
+				<div class="header_box_order">
+					<div class="p1">添加服务地址</div>
+					<a href="#" class="back"><img src="#"></a>
+				</div>
+			</header>
+
+			<form method="post" action="#" id="gps_attr">
+				<div class="gps_attr_name">
+					<img src="#">
+					<input type="text" placeholder="请输入小区或大厦名称">
+				</div>
+				<div id="allmap" class="m_t10"></div>
+				<div id="your_addr" class="m_t10">
+					<p>你所在地点</p>
+					<p></p>
+				</div>
+				
+				<section id="conf_save">
+					<input type="submit" value="确认">	
+				</section>	
+			</form>
+		</div>
+	</body>
+
+</html>
+
+<script>function showPosition(t){var e=t.coords.latitude,o=t.coords.longitude,r=new BMap.Point(o,e),n=new BMap.Map("allmap");n.enableScrollWheelZoom(!0),n.centerAndZoom(r,15),n.addControl(new BMap.NavigationControl),$("#your_addr p:nth-child(2)").html("无法定位你所在位置"),translateCallback=function(t){if(0===t.status){var e=new BMap.Marker(t.points[0]);n.addOverlay(e);var o=new BMap.Geocoder;o.getLocation(t.points[0],function(t){var e=t.addressComponents;province=e.province,city=e.city,district=e.district,street=e.street,streetNumber=e.streetNumber,$("#your_addr p:nth-child(2)").html(district+street+streetNumber)}),n.setCenter(t.points[0])}},setTimeout(function(){var t=new BMap.Convertor,e=[];e.push(r),t.translate(e,1,5,translateCallback)},1e3)}var province=0,city=0,district=0,street=0,streetNumber=0;navigator.geolocation.getCurrentPosition(showPosition)</script>

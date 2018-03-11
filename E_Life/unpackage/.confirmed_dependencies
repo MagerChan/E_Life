@@ -1,0 +1,117 @@
+{
+  "debug/tmpl/login.html": {
+    "resources": [
+      "debug/css/main.min.css",
+      "debug/js/interaction/login.min.js",
+      "debug/js/interaction/register.min.js",
+      "debug/tmpl/index.html"
+    ],
+    "refer": []
+  },
+  "debug/tmpl/index.html": {
+    "resources": [
+      "debug/js/thirdpart/zepto.min.js",
+      "debug/images/nav2.png",
+      "debug/images/elife.png",
+      "debug/images/Toi_Group.png",
+      "debug/images/order.png",
+      "debug/images/nav6.png",
+      "debug/images/no_order.png",
+      "debug/images/RiChangQingJie.png",
+      "debug/images/mine_on.png",
+      "debug/images/Ele_Group.png",
+      "debug/images/nav4.png",
+      "debug/images/sprites.png",
+      "debug/images/nav8.png",
+      "debug/js/main.min.js",
+      "debug/images/Kit_Group.png",
+      "debug/images/member.png",
+      "debug/tmpl/login.html",
+      "debug/images/l2.jpg",
+      "debug/images/CaBoLi.png",
+      "debug/images/ShenDuBaoJie.png",
+      "debug/images/nav1.png",
+      "debug/images/nav5.png",
+      "debug/images/mine.png",
+      "debug/images/nav7.png",
+      "debug/images/l1.jpg",
+      "debug/images/elife_on.png",
+      "debug/images/login_img.jpg",
+      "debug/images/l3.jpg",
+      "debug/images/nav3.png",
+      "debug/css/main.min.css",
+      "debug/js/interaction/index.min.js",
+      "debug/images/rcbj.png",
+      "debug/images/order_on.png",
+      "debug/tmpl/show_order.html",
+      "debug/images/member_on.png",
+      "debug/tmpl/FuWuDiZhi.html",
+      "debug/tmpl/RiChangBaoJie.html",
+      "debug/tmpl/location.html"
+    ],
+    "refer": [
+      "debug/tmpl/login.html"
+    ]
+  },
+  "debug/tmpl/show_order.html": {
+    "resources": [
+      "debug/js/interaction/show_order.min.js",
+      "debug/tmpl/index.html"
+    ],
+    "refer": []
+  },
+  "debug/tmpl/FuWuDiZhi.html": {
+    "resources": [
+      "debug/js/interaction/FuWuDiZhi.min.js",
+      "debug/tmpl/index.html",
+      "debug/tmpl/add_addr.html",
+      "debug/js/thirdpart/zepto.min.js",
+      "debug/tmpl/place_order.html",
+      "debug/js/main.min.js"
+    ],
+    "refer": []
+  },
+  "debug/tmpl/add_addr.html": {
+    "resources": [
+      "debug/js/interaction/add_addr.min.js"
+    ],
+    "refer": []
+  },
+  "debug/tmpl/RiChangBaoJie.html": {
+    "resources": [
+      "debug/images/ljdqdgh.jpg",
+      "debug/images/ws.jpg",
+      "debug/images/dmqlcs.jpg",
+      "debug/images/mcjmkckcs.jpg",
+      "debug/images/yt.jpg",
+      "debug/images/qjsfwpzl.jpg",
+      "debug/images/cwtmqjjzl.jpg",
+      "debug/images/snbljmcs.jpg",
+      "debug/images/wsj.jpg",
+      "debug/images/ct.jpg",
+      "debug/js/interaction/RiChangBaoJie.min.js",
+      "debug/images/jdbmcs.jpg",
+      "debug/images/cf.jpg",
+      "debug/images/jjbmccjzl.jpg",
+      "debug/images/tjxkgcs.jpg",
+      "debug/images/kt.jpg",
+      "debug/tmpl/place_order.html"
+    ],
+    "refer": []
+  },
+  "debug/tmpl/place_order.html": {
+    "resources": [
+      "debug/js/thirdpart/zepto.min.js",
+      "debug/js/interaction/order.min.js",
+      "debug/js/main.min.js",
+      "debug/tmpl/FuWuDiZhi.html",
+      "debug/tmpl/index.html"
+    ],
+    "refer": []
+  },
+  "debug/tmpl/location.html": {
+    "resources": [
+      "debug/images/star.png"
+    ]
+  }
+}
