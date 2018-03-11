@@ -5,11 +5,13 @@
 	left: 0;
 	top: 0;
 }
-.login_back img{
+.login_back div{
 	display: block;
-	width: 40px;
-	height: 40px;
-	margin: 10px;
+	width: 20px;
+	height: 20px;
+	margin: 20px;
+	background: url('../../debug/images/sprites.png');
+	background-position: 0 0;
 }
 .log_reg_sec{
 	position: absolute;

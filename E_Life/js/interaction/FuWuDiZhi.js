@@ -80,7 +80,7 @@ function insert_addr(name, addr, tel,id) {
 	});
 
 	$(new_item).find(".btn_view").on("click", function() {
-		onChooseAlbum(this);
+		onChooseAlbum(this,id);
 	});
 
 	$(new_item).find(".btn_edit").on("click", function() {
@@ -110,13 +110,13 @@ function onitemClick(obj) {
 	}
 }
 
-function onChooseAlbum(obj) {
+function onChooseAlbum(obj,id) {
 	chooseContent = $(obj).parent().parent().find('.addr_left').find('p:last-child').html();
 	
 	//把服务地址传到服务器session存起来
 	$.ajax({
 		type: "get",
-		url: 'http://elife.com/save_addr_info.php?addr_info='+chooseContent+'',
+		url: 'http://elife.com/save_addr_info.php?addr_info='+chooseContent+'&addr_id='+id+'',
 		dataType: 'jsonp',
 		jsonp: "jsoncallback",
 		timeout: 15000,
@@ -276,5 +276,5 @@ $('#add_serve_addr').click(function() {
 });
 
 $('#fwdzback').click(function() {
-	window.location.back();
+	history.back();
 });

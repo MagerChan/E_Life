@@ -40,8 +40,8 @@ function get_serve_info(serveid){
 
 function show_serve_info(result){
 	$('#serve_name').html(result.serve_title);
-	$('#serve_money').html(result.serve_const+'元/'+result.unit);
-	var discountmoney=parseInt(parseInt(result.serve_const)*result.serve_discount);
+	$('#serve_money').html(result.serve_cost+'元/'+result.unit);
+	var discountmoney=parseInt(parseInt(result.serve_cost)*result.serve_discount);
 	$('#serve_money_menber').html(discountmoney+'元/'+result.unit);
 }
 
@@ -51,7 +51,7 @@ function onorderclick(data){
 	//跳转到place_order页面
 	$.ajax({
 		type: "get",
-		url: 'http://elife.com/save_serve_info.php?serveid='+serveid+'&servename='+data.serve_title+'&cost='+data.serve_const+'',
+		url: 'http://elife.com/save_serve_info.php?serveid='+serveid+'&servename='+data.serve_title+'&cost='+data.serve_cost+'',
 		dataType: 'jsonp',
 		jsonp: "jsoncallback",
 		timeout: 15000,

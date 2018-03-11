@@ -47,12 +47,14 @@
 	background: #FFFFFF;
 }
 
-.allcost img{
+.allcost div:first-child div{
 	width: 30px;
 	height: 30px;
 	position: relative;
 	top: 10px;
 	left: 10px;
+	background: url('../../debug/images/sprites.png');
+	background-position: -30px -240px;
 }
 
 .allcost p:first-child{
@@ -117,7 +119,7 @@
 	padding-right: 10px;
 }
 
-.otheritem div:nth-child(1) img{
+.otheritem div:nth-child(1) div{
 	width: 30px;
 	height: 30px;
 	position: relative;
@@ -125,13 +127,29 @@
 	left: 10px;
 }
 
-.otheritem div:nth-child(3) img{
+.yhq{
+	background: url('../../debug/images/sprites.png');
+	background-position: -30px -180px;
+}
+
+.xttjay{
+	background: url('../../debug/images/sprites.png');
+	background-position: -30px -210px;
+}
+
+.gayxh{
+	background: url('../../debug/images/sprites.png');
+	background-position: -30px -150px;
+}
+
+.otheritem div:nth-child(3) div{
 	width: 20px;
 	height: 20px;
 	position: relative;
 	top: 15px;
-	/*left: 15px;*/
 	float: right;
+	background: url('../../debug/images/sprites.png');
+	background-position: 0px -40px;
 }
 
 .confirmfinally{

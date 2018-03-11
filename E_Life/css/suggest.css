@@ -1,13 +1,15 @@
 .call{
 	position: absolute;
 	display: block;
-	top: 20px;
+	top: 15px;
 	right: 15px;
 }
 
-.call img{
-	width: 20px;
-	height: 20px;
+.call div{
+	width: 30px;
+	height: 30px;
+	background: url('../../debug/images/sprites.png');
+	background-position: 0px -330px;
 }
 
 #suggest_sec{

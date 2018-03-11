@@ -135,3 +135,12 @@
 .btn_edit_item:last-child:after {
 	display: none;
 }
+
+.back div{
+	display: block;
+	width: 20px;
+	height: 20px;
+	margin: 20px;
+	background: url('../../debug/images/sprites.png');
+	background-position: 0 0;
+}

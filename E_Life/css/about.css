@@ -61,11 +61,40 @@
 	float: left;
 	border: none;
 }
-.select_icon img{
+.select_icon div{
 	margin: 10px auto;
 	display: block;
 	width: 30px;
 	height: 30px;
+}
+
+#select_icon_1{
+	background: url('../../debug/images/sprites.png');
+	background-position: 0px -270px;
+}
+#select_icon_2{
+	background: url('../../debug/images/sprites.png');
+	background-position: 0px -180px;
+}
+#select_icon_3{
+	background: url('../../debug/images/sprites.png');
+	background-position: 0px -210px;
+}
+#select_icon_4{
+	background: url('../../debug/images/sprites.png');
+	background-position: 0px -330px;
+}
+#select_icon_5{
+	background: url('../../debug/images/sprites.png');
+	background-position: 0px -150px;
+}
+#select_icon_6{
+	background: url('../../debug/images/sprites.png');
+	background-position: 0px -300px;
+}
+#select_icon_7{
+	background: url('../../debug/images/sprites.png');
+	background-position: 0px -240px;
 }
 
 .select_name{
@@ -86,11 +115,13 @@
 	border: none;
 	border-bottom: 1px solid #E0E0E0;
 }
-.go_icon img{
+.go_icon div{
 	margin: 15px auto;
 	display: block;
 	width: 20px;
 	height: 20px;
+	background: url('../../debug/images/sprites.png');
+	background-position: 0px -40px;
 }
 
 .layout input{
