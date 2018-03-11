@@ -4,7 +4,12 @@ var cp=0;
 
 //获取键盘的keyup事件
 $('#input_reg_tel').keyup(function(){
-	t= $('#input_reg_tel').val().length == 11 ? 1 : 0;
+	var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/; 
+	if(($('#input_reg_tel').val().length == 11) && myreg.test($("#input_reg_tel").val())){
+		t=1;
+	}else{
+		t=0;
+	}
 	if((t+p+cp) == 3){
 		btn_is_click(true,'#regiterbtn');
 	}else{

@@ -339,8 +339,8 @@ $('#place_order').click(function() {
 		timeout: 15000,
 		success: function(data) {
 			$('#c_order_type').html(data.servename);
-			$('#c_order_cost').html(data.servecost + '元x' + hournum_);
-			var money = parseInt(data.servecost) * parseInt(hournum_);
+			$('#c_order_cost').html(data.servecost + '元 x ' + hournum_ + '小时 x '+auntnum_ +'位');
+			var money = parseInt(data.servecost) * parseInt(hournum_) * parseInt(auntnum_) ;
 			cost=money;
 			$('#totalmoney').html(money + '元');
 			$('#confirm_money').html('￥' + money);

@@ -26,6 +26,12 @@
 	font-size: 15px;
 }
 
+.show_order_whole_sec{
+	width: 100%;
+	position: absolute;
+	top: 70px;
+}
+
 .show_order_whole_{
 	width: 100%;
 	height: 30px;

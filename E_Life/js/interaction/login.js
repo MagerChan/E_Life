@@ -4,7 +4,12 @@ var username='';
 
 //获取键盘的keyup事件
 $('#input_tel').keyup(function(){
-	l_t = $('#input_tel').val().length == 11 ? 1 : 0;
+	var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/; 
+	if(($('#input_tel').val().length == 11) && myreg.test($("#input_tel").val())){
+		l_t=1;
+	}else{
+		l_t=0;
+	}
 	if((l_t+l_p) == 2){
 		btn_is_click(true,'#loginbtn');
 	}else{

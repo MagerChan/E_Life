@@ -22,10 +22,9 @@ function get_addr() {
 				for(var i = 0; i < data.result.length; i++) {
 					insert_addr(data.result[i]["name"], data.result[i]["detail_addr"], data.result[i]["tel"],data.result[i]['_id']);
 				}
-			} else if(!data.nologin){
-				$('.no_address').css('display','none');
-				//location.href="../../debug/tmpl/login.html";
-			}else {
+			} else if(!data.islogin){//没有登录
+				location.href="../../debug/tmpl/login.html";
+			}else {//已经登录但是没有地址
 				$('.no_address').css('display','block');
 			}
 		},

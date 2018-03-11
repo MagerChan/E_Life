@@ -69,7 +69,6 @@ function create_order(id,name,status,desc,money,url){
 				'</div>'+
 				'<div class="order_judge">'+
 					'<div class="order_money">合计：￥'+money+'</div>'+
-					'<a href="#">评价</a>'+
 				'</div>';
 	var orderitem=document.createElement('section');
 	orderitem.className='orderbox';

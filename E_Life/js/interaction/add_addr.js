@@ -52,9 +52,6 @@ function add_addr_(name_,addr_,userid_,tel_){
             }
         },  
         error:function(XMLHttpRequest, textStatus, errorThrown) {
-            console.log(XMLHttpRequest.readyState);
-            console.log(XMLHttpRequest.status);
-            console.log(textStatus);
             ELife_UI.Toast.show('服务器繁忙，请稍后重试！');
 			window.setTimeout(function(){
 				ELife_UI.Toast.hide();
@@ -82,8 +79,6 @@ $('#add_addr_back').click(function(){
 	history.back();
 });
 
-getusertel();
-
 function getusertel(){
 	$.ajax({
 		type:"get",
@@ -92,7 +87,6 @@ function getusertel(){
         jsonp:"jsoncallback", 
         timeout:15000,
         success:function(data) { 
-        	console.log(data);
         	if(data.ret){
         		$('#addr_tel').val(data.tel);
         	}

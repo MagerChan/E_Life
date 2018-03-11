@@ -89,7 +89,12 @@ $('#cancel').click(function(){
 	var time=timestamp-subtime;
 	var tian=time / 60 / 60 / 24;
 	var shi=time / 60 / 60;
-	if(tian > 1 || shi > 2){
+	if(is_evaluate == 1){
+		ELife_UI.Toast.show('订单已完成，不能取消订单，如有疑问，请联系客服');
+		window.setTimeout(function() {
+			ELife_UI.Toast.hide();
+		}, 2000);
+	}else if(tian > 1 || shi > 2){
 		ELife_UI.Toast.show('距离预约服务已过去超过2小时，不能取消订单，如有疑问，请联系客服');
 		window.setTimeout(function() {
 			ELife_UI.Toast.hide();
