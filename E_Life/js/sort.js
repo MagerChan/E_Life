@@ -1,34 +1,34 @@
-//自由驱动工作室
-//作者：林鑫
 $(function(){
         var Initials=$('.initials');
         var LetterBox=$('#letter');
-        Initials.find('ul').append('<li>A</li><li>B</li><li>C</li><li>D</li><li>E</li><li>F</li><li>G</li><li>H</li><li>I</li><li>J</li><li>K</li><li>L</li><li>M</li><li>N</li><li>O</li><li>P</li><li>Q</li><li>R</li><li>S</li><li>T</li><li>U</li><li>V</li><li>W</li><li>X</li><li>Y</li><li>Z</li><li>#</li>');
+        Initials.find('ul').append('<li>B</li><li>C</li><li>G</li><li>H</li><li>J</li><li>K</li><li>N</li><li>Q</li><li>S</li><li>T</li><li>W</li><li>X</li><li>Y</li><li>Z</li><li>#</li>');
         initials();
 
         $(".initials ul li").click(function(){
             var _this=$(this);
             var LetterHtml=_this.html();
-            LetterBox.html(LetterHtml).fadeIn();
+            LetterBox.html(LetterHtml).css('animation','fadeIn 1s linear both').css('-webkit-animation','fadeIn 1s linear both');
 
             Initials.css('background','rgba(145,145,145,0.6)');
             
             setTimeout(function(){
                 Initials.css('background','rgba(145,145,145,0)');
-                LetterBox.fadeOut();
+                LetterBox.css('animation','fadeOut 1s linear both').css('-webkit-animation','fadeOut 1s linear both');
             },1000);
 
             var _index = _this.index()
             if(_index==0){
-                $('html,body').animate({scrollTop: '0px'}, 300);//点击第一个滚到顶部
+            	//点击第一个滚到顶部
+                $('html,body').scrollTop(0);
             }else if(_index==27){
                 var DefaultTop=$('#default').position().top;
-                $('html,body').animate({scrollTop: DefaultTop+'px'}, 300);//点击最后一个滚到#号
+                //点击最后一个滚到#号
+                $('html,body').scrollTop(DefaultTop);
             }else{
                 var letter = _this.text();
                 if($('#'+letter).length>0){
                     var LetterTop = $('#'+letter).position().top;
-                    $('html,body').animate({scrollTop: LetterTop-60+'px'}, 300);
+                    $('html,body').scrollTop(LetterTop-70);
                 }
             }
         })
@@ -36,7 +36,7 @@ $(function(){
         var windowHeight=$(window).height();
         var InitHeight=windowHeight-45;
         Initials.height(InitHeight);
-        var LiHeight=InitHeight/28;
+        var LiHeight=InitHeight/25;
         Initials.find('li').height(LiHeight);
 })
 
@@ -107,6 +107,9 @@ function initials() {//公众号排序
                 break;
             case "M":
                 $('#M').after(SortList.eq(i));
+                break;
+            case "N":
+                $('#N').after(SortList.eq(i));
                 break;
             case "O":
                 $('#O').after(SortList.eq(i));

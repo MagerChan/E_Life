@@ -1,3 +1,30 @@
+html,body,div,ul,li,ol,a,input,textarea,p,dl,dt,dd{margin:0;padding:0;}
+ul li{list-style: none;}
+a{text-decoration: none;cursor: pointer;}
+html{height: 100%;}
+body{height: 100%;background: #f5f5f5;position: relative;font-family: '微软雅黑';max-width: 640px;margin:auto;}
+a,input,img,textarea,span,div{outline: 0;-webkit-tap-highlight-color:rgba(255,0,0,0);}
+header{
+    width:100%;
+    height: 45px;
+    background: #FFFFFF;
+    border-bottom: 1px solid #00BEAE;
+}
+header.fixed{
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 99;
+}
+.header{
+    margin:0 auto;
+    text-align: center;
+    color: #4e4a49;
+    font-size: 1em;
+    height: 45px;
+    line-height: 45px;
+    position: relative;
+}
 #letter{
     width: 100px;
     height: 100px;
@@ -22,30 +49,17 @@
 }
 .sort_box{
     width: 100%;
-    padding-top: 45px;
+    padding-top: 50px;
     overflow: hidden;
 }
 .sort_list{
-    padding:10px 60px 10px 80px;
+    padding:10px 60px 10px 20px;
     position: relative;
     height: 40px;
     line-height: 40px;
     border-bottom:1px solid #ddd;
 }
 
-.sort_list .num_logo{
-    width: 50px;
-    height: 50px;
-    border-radius: 10px;
-    overflow: hidden;
-    position: absolute;
-    top: 5px;
-    left: 20px;
-}
-.sort_list .num_logo img{
-    width: 50px;
-    height: 50px;
-}
 .sort_list .num_name{
     color: #000;
 }
@@ -60,16 +74,112 @@
 }
 .initials{
     position: fixed;
-    top: 47px;
+    top: 67px;
     right: 0px;
     height: 100%;
-    width: 15px;
+    width: 16px;
     padding-right: 10px;
     text-align: center;
-    font-size: 12px;
+    font-size: 14px;
     z-index: 99;
     background: rgba(145,145,145,0);
 }
 .initials li img{
     width: 14px;
 }
+
+@keyframes fadeIn{
+	0%{opacity: 0;}
+	100%{opacity: 1;}
+}
+@-webkit-keyframes fadeIn{
+	0%{opacity: 0;}
+	100%{opacity: 1;}
+}
+
+@keyframes fadeOut{
+	0%{opacity: 1;}
+	100%{opacity: 0;}
+}
+@-webkit-keyframes fadeOut{
+	0%{opacity: 1;}
+	100%{opacity: 0;}
+}
+
+.back{
+	position: absolute;
+	display: block;
+	top: 12.5px;
+	left: 15px;
+}
+
+.back img{
+	width: 20px;
+	height: 20px;
+}
+
+
+.nowchoice{
+	width: 100%;
+	height: 60px;
+	line-height: 60px;
+	background: #FFFFFF;
+	margin-top: 60px;
+	font-weight: 700;
+	font-family: "微软雅黑";
+}
+
+.nowchoice div:first-child{
+	width: 40%;
+	height: 100%;
+	float: left;
+	padding-left: 10px;
+}
+.nowchoice div:last-child{
+	width: 50%;
+	height: 60px;
+	float: left;
+}
+
+.gps_city{
+	width: 100%;
+	height: 20px;
+	color: #999;
+	font-size: 12px;
+	margin-top: 20px;
+	margin-left: 10px;
+}
+
+.gps_city div:first-child{
+	width: 20%;
+	float: left;
+}
+
+.gps_city div:last-child{
+	width: 65%;
+	float: left;
+	border-top: 1px solid #E0E0E0;
+	margin-top: 8px;
+}
+
+.hot_city{
+	width: 30%;
+	height: 45px;
+	float: left;
+}
+
+.city_choice{
+	width: 90px;
+	height: 40px;
+	line-height: 40px;
+	display: block;
+	border: 1px solid #E0E0E0;
+	text-align: center;
+	margin-top: 10px;
+	margin-left: 40px;
+	font-size: 16px;
+	background: #FFFFFF;
+}
+
+
+
