@@ -1,0 +1,32 @@
+{
+	"index.html": {
+		"resources": [
+			"images/order.png",
+			"images/nav6.png",
+			"css/base.css",
+			"images/nav7.png",
+			"images/nav5.png",
+			"images/mine.png",
+			"images/nav1.png",
+			"images/elife.png",
+			"images/nav2.png",
+			"images/nav4.png",
+			"images/member.png",
+			"css/index.css",
+			"js/common.js",
+			"images/elife_on.png",
+			"images/l3.jpg",
+			"js/zepto.min.js",
+			"images/order_on.png",
+			"images/nav8.png",
+			"images/CaBoLi.png",
+			"images/l1.jpg",
+			"images/nav3.png",
+			"images/ShenDuBaoJie.png",
+			"images/l2.jpg",
+			"js/index.js",
+			"images/RiChangQingJie.png",
+			"css/add_addr_gps.css"
+		]
+	}
+}
