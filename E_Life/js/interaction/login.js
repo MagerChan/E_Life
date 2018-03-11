@@ -88,9 +88,10 @@ $('#reg_back').on('click',function(e){
 });
 
 $('#loginbacktoindex').click(function (event) {
-    if (event && event.preventDefault) {
+    /*if (event && event.preventDefault) {
         event.preventDefault();
     }
     fnUrlReplace(this);
-    return false;
+    return false;*/
+   location.replace('../../debug/tmpl/index.html');
 });
