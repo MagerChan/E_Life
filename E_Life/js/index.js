@@ -4,9 +4,10 @@ window.onload = function() {
 	head();
 	/*轮播图*/
 	banner();
-	
-};
+	/*选项卡切换*/
+	footer();
 
+};
 
 /*搜索区块的颜色变化*/
 function head() {
@@ -184,3 +185,35 @@ function banner() {
 
 }
 
+/*选项卡切换*/
+function footer() {
+	var oAs = $('#footer').find('a');
+	for(var i = 0; i < oAs.length; i++) {
+		$($(oAs)[i]).click(function() {
+			for(var j = 0; j < oAs.length; j++) {
+				var newsrc1 = '',
+					newsrc2 = '';
+				var src = $($(oAs)[j]).find('img').attr('src');
+				var index = src.indexOf('.');
+				var src1 = src.substring(0, index);
+				var src2 = src.substring(index, src.length);
+				var src3 = src.substring(0, index - 3);
+				var src4=src.substring(index-3,index);
+				if(src4 == '_on') {
+					newsrc1 = src3 + '' + src2;
+					$($(oAs)[j]).find('img').attr('src',newsrc1);
+				} else {
+					newsrc2 = src1 + '' + src2;
+					$($(oAs)[j]).find('img').attr('src',newsrc2);
+				}
+			}
+
+			var src_1 = $(this).find('img').attr('src');
+			var index = src_1.indexOf('.');
+			var src1_1 = src_1.substring(0, index);
+			var src2_1 = src_1.substring(index, src_1.length);
+			var newsrc = src1_1 + '_on' + src2_1;
+			$(this).find('img').attr('src', newsrc);
+		});
+	}
+}
