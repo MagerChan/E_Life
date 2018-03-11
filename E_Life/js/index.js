@@ -658,6 +658,7 @@ $('#logout').click(function(){
 				window.setTimeout(function() {
 					ELife_UI.Toast.hide();
 				}, 2000);
+				location.href('../../debug/tmpl/index.html');
 			} else {
 				ELife_UI.Toast.show('网络繁忙,请稍后重试');
 				window.setTimeout(function() {
@@ -672,6 +673,10 @@ $('#logout').click(function(){
 			}, 2000);
 		}
 	});
+});
+
+$('#moresettingback').click(function(){
+	history.back();
 });
 
 /*添加这个方法的元素,其链接不进入历史url记录堆栈*/

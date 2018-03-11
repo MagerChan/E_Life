@@ -17,12 +17,17 @@ function get_addr() {
 		jsonp: "jsoncallback",
 		timeout: 15000,
 		success: function(data) {
+			console.log(data);
 			if(data.ret) {
+				$('.no_address').css('display','none');
 				for(var i = 0; i < data.result.length; i++) {
 					insert_addr(data.result[i]["name"], data.result[i]["detail_addr"], data.result[i]["tel"],data.result[i]['_id']);
 				}
-			} else {
-				location.href="../../debug/tmpl/login.html";
+			} else if(!data.nologin){
+				$('.no_address').css('display','none');
+				//location.href="../../debug/tmpl/login.html";
+			}else {
+				$('.no_address').css('display','block');
 			}
 		},
 		error: function(XMLHttpRequest, textStatus, errorThrown) {

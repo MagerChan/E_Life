@@ -1,6 +1,10 @@
 var serveid = GetQueryString("id");
 if(serveid != null && serveid.toString().length >= 1) {
 	serveid = GetQueryString("id");
+	var charstr=serveid.substr(serveid.length-1,1)
+	if(charstr == '#'){
+		serveid=serveid.substr(0,serveid.length-1);
+	}
 	get_serve_info(serveid);
 }
 
@@ -27,10 +31,7 @@ function get_serve_info(serveid){
 			}
 		},
 		error: function(XMLHttpRequest, textStatus, errorThrown) {
-			console.log(XMLHttpRequest.readyState);
-			console.log(XMLHttpRequest.status);
-			console.log(textStatus);
-			ELife_UI.Toast.show('服务器繁忙，请稍后重试');
+			ELife_UI.Toast.show('服务器繁忙ha，请稍后重试');
 			window.setTimeout(function() {
 				ELife_UI.Toast.hide();
 			}, 2000);

@@ -47,9 +47,6 @@ function check_user_info(tel_,pwd_){
             }
         },  
         error : function(XMLHttpRequest, textStatus, errorThrown) {
-            console.log(XMLHttpRequest.readyState);
-            console.log(XMLHttpRequest.status);
-            console.log(textStatus);
             ELife_UI.Toast.show('服务器繁忙，请稍后重试！');
 			window.setTimeout(function(){
 				ELife_UI.Toast.hide();
@@ -96,5 +93,6 @@ $('#loginbacktoindex').click(function (event) {
     }
     fnUrlReplace(this);
     return false;*/
-   location.replace('../../debug/tmpl/index.html');
+    //location.replace('../../debug/tmpl/index.html');
+    history.back();
 });

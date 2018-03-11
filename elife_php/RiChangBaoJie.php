@@ -5,6 +5,7 @@
 
     $data = ["ret"=>false, "msg"=>"" ,"username"=>"","user_id"=>"", "result"=>""];
     $id=$_GET['id'];
+    $userid=$_SESSION['userid'];
 
     $data = get_serve($id);
 
