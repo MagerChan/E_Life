@@ -11,6 +11,7 @@ function get_user_info(){
             console.log("向服务器请求数据出错!");
         },
         success: function(data){
+        	//console.log(data);
             if(data.length>0) {
                 tmpl_info=data;
                 tmpl_create_table(data);

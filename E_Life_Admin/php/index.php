@@ -4,15 +4,14 @@
 	header("Access-Control-Allow-Origin:*");
 	header("Access-Control-Allow-Methods:POST,GET");
 	
-    /*$tmpl = array('ret'=>false,'list'=>'');
+    //$tmpl = array('ret'=>false,'list'=>'');
     
-    if($_SESSION['admin']){
+    /*if($_SESSION['admin']){
     	$tmpl['ret']=true;
     	$tmpl['list'] = get_template();
-    }
-    $tmpl['ttt']=$_SESSION['admin'];*/
-    $tmpl=array();
-    $tmpl = get_template();
+    }*/
+   	$tmpl=array();
+   	$tmpl=get_template();
     echo json_encode($tmpl);
     
     function get_template(){
@@ -32,8 +31,8 @@
             $stmt->execute();
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
             if (count($result)){
-            	/*$data['ret']=true;
-                $data['list'] = $result;*/ 
+            	//$data['ret']=true;
+                //$data['list'] = $result; 
                 $data=$result;
             }            
         }

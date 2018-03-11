@@ -646,7 +646,7 @@ function getLocalTime(nS) {
 $('#logout').click(function(){
 	$.ajax({
 		type: "get",
-		url: 'http://139.199.198.216/logout.php?',
+		url: 'http://elife.com/logout.php?',
 		dataType: 'jsonp',
 		jsonp: "jsoncallback",
 		timeout: 15000,
@@ -655,8 +655,8 @@ $('#logout').click(function(){
 				ELife_UI.Toast.show('退出成功');
 				window.setTimeout(function() {
 					ELife_UI.Toast.hide();
+					location.href='../../debug/tmpl/index.html';
 				}, 2000);
-				location.href('../../debug/tmpl/index.html');
 			} else {
 				ELife_UI.Toast.show('网络繁忙,请稍后重试');
 				window.setTimeout(function() {

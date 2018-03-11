@@ -96,3 +96,14 @@ ELife_UI=new(function(){
         };
 	});
 });
+
+$('.logout').click(function(){
+	ELife_UI.Message.show({
+		title: '',
+		message: '确定登出吗?',
+		ok: function() {
+			location.href='./login.html';
+		},
+		cancel: function() {}
+	});
+})

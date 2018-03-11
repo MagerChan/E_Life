@@ -416,3 +416,20 @@ input{
 	margin-left: 10px;
 	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #F1F1F1), color-stop(1, #DFDFDF));
 }
+
+.logout{
+	width: 50px;
+	height: 30px;
+	float: right;
+	margin-right: 20px;
+	color: #000000;
+	font-size: 18px;
+}
+
+.tips{
+	width: 100%;
+	line-height: 30px;
+	color: #999;
+	padding-left: 130px;
+	margin-top: -10px;
+}
