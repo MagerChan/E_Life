@@ -1,11 +1,12 @@
 <?php
     ini_set("error_reporting","E_ALL & ~E_NOTICE");
 
-    $data = array("ret"=>false, "msg"=>"", "username"=>"");
+    $data = array("ret"=>false, "msg"=>"","username"=>"");
+    $name=$_GET['name'];
     $tel=$_GET['tel'];
-    $pwd=$_GET['pwd'];
+    $addr=$_GET['addr'];
 
-    $data = get_serve($tel,$pwd);
+    $data = get_serve($name,$tel,$addr);
 
     echo $_GET['jsoncallback']."(".json_encode($data).")";//解决ajax跨域问题
 
@@ -30,7 +31,6 @@
 	        $stmt->execute();
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
             if (count($result)){
-                echo($result);
                 $data['ret']=true;
                 $data['username']=$tel;
             }else{
