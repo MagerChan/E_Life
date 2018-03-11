@@ -13,11 +13,13 @@
 	height: 100px;
 	margin: 25px auto;
 }
-.login_icon > img{
+.login_icon > div{
 	width: 100px;
 	height: 100px;
 	margin: 0 auto;
 	display: block;
+	background: url('../../debug/images/login_img.jpg');
+	background-size: 100% 100%;
 }
 
 #login_btn{
