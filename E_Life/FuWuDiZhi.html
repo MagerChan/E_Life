@@ -1,54 +1,50 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
 		<title>易生活</title>
 		<link rel="stylesheet" type="text/css" href="../css/main.min.css">
 	</head>
-	
+
 	<body>
 		<div class="layout">
 			<header class="header">
 				<div class="header_box_order">
 					<div class="p1">服务地址</div>
-					<a href="#" class="back"><img src="#" /></a>
+					<a href="#" class="back" id="fwdzback"><img src="#" /></a>
 				</div>
 			</header>
-			
+
 			<section class="no_address">
 				<p>请添加服务地址</p>
 				<a href="add_addr.html">添加服务地址</a>
 			</section>
-			
-			<section class="has_address">
-				<a href="edit_addr.html" class="address">
-					<div class="addr_left">
-						<p>玛阁</p>
-						<p>深圳市东方科技大厦</p>
+
+			<!--<section class="has_address">				
+			</section>-->
+			<ul class="has_address">
+				<!--<li class='address'>
+					<div class='addr_left'>
+						<p>name </p>
+						<p> addr </p>
 					</div>
-					<div class="addr_right">
-						18320364821
+					<div class='addr_right'> tel</div>
+					<div class='div_btn dis_none'>
+						<a class='btn_view btn_edit_item'>选中</a>
+						<a class='btn_edit btn_edit_item'>编辑</a>
+						<a class='btn_delete btn_edit_item'>删除</a>
 					</div>
-				</a>
-				
-				<a href="edit_addr.html" class="address">
-					<div class="addr_left">
-						<p>玛阁</p>
-						<p>深圳市东方科技大厦</p>
-					</div>
-					<div class="addr_right">
-						18320364821
-					</div>
-				</a>
-				
-				<a href="add_addr.html" class="addr_foot">
-					添加服务地址
-				</a>
-			</section>
+				</li>-->				
+			</ul>
+
+			<input type="button" value="添加服务地址" id="add_serve_addr" />
 		</div>
-		
+
 		<script type="text/javascript" src="../js/thirdpart/zepto.min.js"></script>
-		<script type="text/javascript" src="../js/main.min.js" ></script>
+		<script type="text/javascript" src="../js/main.min.js"></script>
+		<script type="text/javascript" src="../js/interaction/FuWuDiZhi.min.js"></script>
 	</body>
+
 </html>

@@ -15,6 +15,7 @@ window.onload = function() {
 };
 
 window.username='';
+window.user_id='';
 
 /*定义一个全局变量*/
 window.itcast={};/*存储我们将要封装的事件方式*/
@@ -502,17 +503,6 @@ function initials() {//公众号排序
     };
 }
 
-//按钮是否可点击状态
-function btn_is_click(show,id){
-	if(show){
-		$(id).removeAttr("disabled");
-		$(id).css('background','#00BEAE');
-	}else{
-		$(id).attr('disabled',true);
-		$(id).css('background','#C0C0C0');
-	}
-}
-
 ELife_UI=new(function(){
 	this.Message=new(function(){
 		var root_id="elife_msg_box";
@@ -625,4 +615,24 @@ function liTab() {
 			$(this).addClass('active');
 		});
 	}
+}
+
+//按钮是否可点击状态
+function btn_is_click(show,id){
+	if(show){
+		$(id).removeAttr("disabled");
+		$(id).css('background','#00BEAE');
+	}else{
+		$(id).attr('disabled',true);
+		$(id).css('background','#C0C0C0');
+	}
+}
+
+//获取链接的参数
+function GetQueryString(name){
+    var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+    var r = window.location.search.substr(1).match(reg);
+    if(r!=null)
+    	return  unescape(r[2]); 
+    return null;
 }

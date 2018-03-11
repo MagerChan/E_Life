@@ -1,7 +1,7 @@
 <?php
     ini_set("error_reporting","E_ALL & ~E_NOTICE");
 
-    $data = array("ret"=>false, "msg"=>"", "username"=>"");
+    $data = ["ret"=>false, "msg"=>"", "username"=>"","user_id"=>""];
     $tel=$_GET['tel'];
     $pwd=$_GET['pwd'];
 
@@ -30,9 +30,9 @@
 	        $stmt->execute();
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
             if (count($result)){
-                echo($result);
                 $data['ret']=true;
                 $data['username']=$tel;
+                $data['user_id']=$result[0]['_id'];
             }else{
                 $data['ret']=false;
             }

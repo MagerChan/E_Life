@@ -39,8 +39,9 @@ function check_user_info(tel_,pwd_){
         timeout:15000,
         success  : function(data) { 
             if(data.ret){
-            	loginSuccess();
             	username=data.username;
+            	user_id=data.user_id;
+            	loginSuccess();
             }else{
             	loginFail();
             }

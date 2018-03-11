@@ -31,26 +31,27 @@ $('#addr_addr').keyup(function(){
 
 $('#save_serve_addr').click(function(){
 	var name=$('#addr_name').val();
-	var tel=$('#addr_tel').val();
 	var addr=$('#addr_addr').val();
-	arr_addr_(name,tel,addr);
+	var tel=$('#addr_tel').val();
+	var userid=4;
+	add_addr_(name,addr,userid,tel);
 });
 
-function add_addr_(name_,tel_,addr_){
+function add_addr_(name_,addr_,userid_,tel_){
 	$.ajax({
 		type:"get",
-		url:'http://elife.com/add_addr.php?name='+name_+'&tel='+tel_+'&addr='+addr_+'',
+		url:'http://elife.com/add_addr.php?name='+name_+'&addr='+addr_+'&userid='+userid_+'&tel='+tel_+'',
 		dataType : 'jsonp',  
         jsonp:"jsoncallback", 
         timeout:15000,
-        success  : function(data) { 
+        success:function(data) { 
             if(data.ret){
             	addaddrsuccess();
             }else{
             	addaddrFail();
             }
         },  
-        error : function(XMLHttpRequest, textStatus, errorThrown) {
+        error:function(XMLHttpRequest, textStatus, errorThrown) {
             console.log(XMLHttpRequest.readyState);
             console.log(XMLHttpRequest.status);
             console.log(textStatus);
@@ -66,7 +67,7 @@ function addaddrsuccess(){
 	ELife_UI.Toast.show('添加地址成功');
 	window.setTimeout(function(){
 		ELife_UI.Toast.hide();
-		location.replace('../../debug/tmpl/FuWuDiZhi.html');
+		window.location.back();
 	},2000);
 }
 

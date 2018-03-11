@@ -1,16 +1,17 @@
 <?php
     ini_set("error_reporting","E_ALL & ~E_NOTICE");
 
-    $data = array("ret"=>false, "msg"=>"","username"=>"");
+    $data = array("ret"=>false, "msg"=>"");
     $name=$_GET['name'];
-    $tel=$_GET['tel'];
     $addr=$_GET['addr'];
+    $userid=$_GET['userid'];
+    $tel=$_GET['tel'];
 
-    $data = get_serve($name,$tel,$addr);
+    $data = insert_addr($name,$addr,$userid,$tel);
 
     echo $_GET['jsoncallback']."(".json_encode($data).")";//解决ajax跨域问题
 
-    function get_serve($tel,$pwd){
+    function insert_addr($name,$addr,$userid,$tel){
     	/*$hostname = "139.199.198.216";
 	    $dbname = "elife";
 	    $username = "Administrator";
@@ -20,21 +21,15 @@
         $username = "root";
         $password = "";
 
-        $timestamp=time();
-
 	    try {
             $_opts_values = array(PDO::ATTR_PERSISTENT=>true,PDO::ATTR_ERRMODE=>2,PDO::MYSQL_ATTR_INIT_COMMAND=>'SET NAMES utf8');//解决乱码问题
 	        $conn = new PDO("mysql:host=$hostname;dbname=$dbname", $username, $password,$_opts_values);
 	        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	        $sql = "select * from elife_user where tel='$tel' and pwd='$pwd'";
-	        $stmt = $conn->prepare($sql);
-	        $stmt->execute();
-            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            if (count($result)){
-                $data['ret']=true;
-                $data['username']=$tel;
-            }else{
-                $data['ret']=false;
+	        $sql = "insert into `elife_address` (`tel`,`name`,`detail_addr`,`user_id`) values ('$tel','$name','$addr','$userid')";
+            $stmt = $conn->prepare($sql);
+            $data['ret']=$stmt->execute();
+            if (!$data["ret"]) {
+                $data["msg"] = $stmt->errorInfo();
             }
 	    }
 	    catch(PDOException $e)
