@@ -1,5 +1,6 @@
 var l_t=0;
 var l_p=0;
+var username='';
 
 //获取键盘的keyup事件
 $('#input_tel').keyup(function(){
@@ -39,6 +40,7 @@ function check_user_info(tel_,pwd_){
         success  : function(data) { 
             if(data.ret){
             	loginSuccess();
+            	username=data.username;
             }else{
             	loginFail();
             }
@@ -60,10 +62,10 @@ function loginSuccess(){
 	ELife_UI.Toast.show('登录成功');
 	window.setTimeout(function(){
 		ELife_UI.Toast.hide();
+		
+		//页面跳转到首页，并且是登录状态,session
+		location.href='../../debug/tmpl/index.html';
 	},2000);
-
-	//页面跳转到首页，并且是登录状态,session
-	
 }
 
 function loginFail(){

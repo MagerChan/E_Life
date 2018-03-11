@@ -1,7 +1,7 @@
 <?php
     ini_set("error_reporting","E_ALL & ~E_NOTICE");
 
-    $data = array("ret"=>false, "msg"=>"");
+    $data = array("ret"=>false, "msg"=>"","username"=>"");
     
     $tel=$_GET['tel'];
     $pwd=$_GET['pwd'];
@@ -29,6 +29,7 @@
 	        $sql = "insert into `elife_user` (`tel`,`pwd`,`rank`,`createtime`) values ('$tel','$pwd',0,'$timestamp')";
 	        $stmt = $conn->prepare($sql);
 	        $data['ret']=$stmt->execute();
+            $data['username']=$tel;
 	        if (!$data["ret"]) {
                 $data["msg"] = $stmt->errorInfo();
             }

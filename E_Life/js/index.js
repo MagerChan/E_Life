@@ -7,6 +7,8 @@ window.onload = function() {
 	/*选项卡切换*/
 	footer();
 	loadletter();
+	/*判断用户是否登录*/
+	is_login();
 };
 
 /*定义一个全局变量*/
@@ -213,7 +215,7 @@ function footer() {
 				var newsrc1 = '',
 					newsrc2 = '';
 				var src = $($(oAs)[j]).find('img').attr('src');
-				var index = src.indexOf('.');
+				var index = src.lastIndexOf('.');
 				var src1 = src.substring(0, index);
 				var src2 = src.substring(index, src.length);
 				var src3 = src.substring(0, index - 3);
@@ -247,7 +249,7 @@ function footer() {
 			}
 
 			var src_1 = $(this).find('img').attr('src');
-			var index = src_1.indexOf('.');
+			var index = src_1.lastIndexOf('.');
 			var src1_1 = src_1.substring(0, index);
 			var src2_1 = src_1.substring(index, src_1.length);
 			var newsrc = src1_1 + '_on' + src2_1;
@@ -256,6 +258,16 @@ function footer() {
 		});
 	}
 }
+
+function is_login(){
+	console.log(username);
+	/*if(un){
+		username=un;
+		$('#login_btn').css('display','none');
+		$('#loginuser').html(un).css('display','block');
+		
+	}*/
+};
 
 function liTab() {
 	var oli = $('#serves_left_ul').find('li');

@@ -20,7 +20,7 @@
 	display: block;
 }
 
-.login_box a{
+#login_btn{
 	width: 100px;
 	height: 32px;
 	line-height: 32px;
@@ -31,6 +31,16 @@
 	display: block;
 	text-align: center;
 	font-size: 18px;
+}
+
+#loginuser{
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	color: #FFFFFF;
+	font-size: 20px;
+	display: none;
 }
 
 .select{
