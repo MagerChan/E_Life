@@ -11,7 +11,7 @@
 			<header class="header">
 				<div class="header_box_order">
 					<div class="p1">添加订单</div>
-					<a href="#" class="back"><img src="#" /></a>
+					<a href="#" class="back" id="palceorderback"><img src="#" /></a>
 				</div>
 			</header>
 			
@@ -19,25 +19,47 @@
 				<section class="orderitem">
 					<div><img/></div>
 					<div>服务时长(小时)</div>
-					<div></div>
+					<div id="servehour">
+						<div id="houradd">+</div>
+						<div id="hournum">1</div>
+						<div id="hoursub" class="nouse">-</div>
+					</div>
 				</section>
 				<section class="orderitem">
 					<div><img/></div>
 					<div>阿姨数量(位)</div>
-					<div></div>
+					<div id="aunt">
+						<div id="auntadd">+</div>
+						<div id="auntnum">1</div>
+						<div id="auntsub" class="nouse">-</div>
+					</div>
 				</section>
 				<section class="orderitem">
 					<div><img/></div>
 					<div>服务地址</div>
-					<div></div>
+					<div id="serveaddr"><a href="FuWuDiZhi.html"><img/></a></div>
 				</section>
-				<section class="orderitem">
+				<section class="orderitem" id="addservetime">
 					<div><img/></div>
 					<div>上门时间</div>
 					<div></div>
 				</section>
+				
+				<section>
+					<div id="serveday"></div>
+					<div id="all_servetime">
+					</div>
+				</section>
 			</section>
 			
+			<footer class="placeorderfooter">
+				<div>确认订单</div>
+			</footer>
+			
 		</div>
+		
+		<script type="text/javascript" src="../js/thirdpart/zepto.min.js"></script>
+		<script type="text/javascript" src="../js/main.min.js" ></script>
+		<script type="text/javascript" src="../js/interaction/order.min.js" ></script>
 	</body>
 </html>
