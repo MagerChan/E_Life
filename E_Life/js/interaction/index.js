@@ -32,8 +32,7 @@ function not_login(){
 }
 
 function get_order_info(){
-	$.ajax(  
-    {  
+	$.ajax({  
         type:'get',  
         url : 'http://elife.com/show_order.php?',  
         dataType : 'jsonp',  
@@ -44,13 +43,9 @@ function get_order_info(){
             	$('.no_order').css('display','none');
             	for(var i=0;i<data.orderinfo.length;i++){
             		var status;
-            		if(data.orderinfo[i]['status'] == 0){
-            			status='进行中';
-            		}else if(data.orderinfo[i]['status'] == 1){
-            			status='已完成';
-            		}else{
-            			status='已取消';
-            		}
+            		if(data.orderinfo[i]['status'] == 0){status='进行中';}
+            		else if(data.orderinfo[i]['status'] == 1){status='已完成';}
+            		else{status='已取消';}
             		create_order(data.orderinfo[i]['_id'],data.serveinfo[i][0]['serve_title'],status,data.serveinfo[i][0]['serve_content'],data.orderinfo[i]['cost'],data.serveinfo[i][0]['big_icon']);
             	}
             }else{
@@ -59,14 +54,9 @@ function get_order_info(){
         },  
         error : function(XMLHttpRequest, textStatus, errorThrown) {
         	$('.no_order').css('display','block');
-            /*ELife_UI.Toast.show('服务器繁忙，请稍后重试！');
-			window.setTimeout(function(){
-				ELife_UI.Toast.hide();
-			},2000);*/
         }  
     }  
-); 
-}
+);}
 
 function create_order(id,name,status,desc,money,url){
 	var innerhtml='<div class="order_div1">'+
