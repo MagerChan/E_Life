@@ -1,12 +1,12 @@
 /*页面加载完成之后执行*/
 window.onload = function() {
 	/*搜索区块的颜色变化*/
-	/*head();*/
+	head();
 	/*轮播图*/
-	/*banner();*/
-	/*切换选项卡*/
-	liTab();
+	banner();
+	
 };
+
 
 /*搜索区块的颜色变化*/
 function head() {
@@ -184,14 +184,3 @@ function banner() {
 
 }
 
-function liTab() {
-	var oli=$('#serves_left_ul').find('li');
-	for(var i = 1; i <= $(oli).length; i++) {
-		$('li:nth-child(' + i + ')').click(function() {
-			for(var j = 1; j <= $(oli).length; j++) {
-				$('li:nth-child(' + j + ')').removeClass('active');
-			}
-			$(this).addClass('active');
-		});
-	}
-}

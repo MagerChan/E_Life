@@ -70,6 +70,14 @@ a{
 	width: 100%;
 	margin:15px auto;
 }
+.target-fix {
+    position: relative;
+    top: -60px; /* 偏移值*/
+    display: block;
+    height: 0;
+    overflow: hidden;
+}
+
 .serve_title{
 	width: 90%;
 	height: 20px;

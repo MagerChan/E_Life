@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
@@ -6,15 +7,17 @@
 	<link rel="stylesheet" type="text/css" href="css/base.css">
 	<link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
+
 <body>
 	<div class="layout">
 		<!-- 搜索头部 -->
 		<header class="header">
 			<div class="header_box">
-				<a href="#" class="location"><!--定位到某一个城市-->
-					<img src=""/>
-					<div class="city">深圳</div>				
-				</a>			
+				<a href="#" class="location">
+					<!--定位到某一个城市-->
+					<img src="" />
+					<div class="city">深圳</div>
+				</a>
 				<div class="appname">易生活</div>
 			</div>
 		</header>
@@ -22,11 +25,21 @@
 		<!-- 轮播图 -->
 		<div class="banner">
 			<ul class="clearfix">
-				<li><a href="#"><img src="images/l3.jpg" alt=""></a></li>
-				<li><a href="#"><img src="images/l1.jpg" alt=""></a></li>
-				<li><a href="#"><img src="images/l2.jpg" alt=""></a></li>
-				<li><a href="#"><img src="images/l3.jpg" alt=""></a></li>
-				<li><a href="#"><img src="images/l1.jpg" alt=""></a></li>
+				<li>
+					<a href="#"><img src="images/l3.jpg" alt=""></a>
+				</li>
+				<li>
+					<a href="#"><img src="images/l1.jpg" alt=""></a>
+				</li>
+				<li>
+					<a href="#"><img src="images/l2.jpg" alt=""></a>
+				</li>
+				<li>
+					<a href="#"><img src="images/l3.jpg" alt=""></a>
+				</li>
+				<li>
+					<a href="#"><img src="images/l1.jpg" alt=""></a>
+				</li>
 			</ul>
 			<ul>
 				<li class="now"></li>
@@ -37,51 +50,51 @@
 
 		<!-- 导航栏 -->
 		<nav class="nav">
-			<ul class="clearfix">
-				<li>
-					<a href="#">
+			<ul id="nav_ul" class="clearfix">
+				<li onclick="liChange(0)">
+					<a href="allserves.html#s1">
 						<img src="images/nav1.png" alt="">
 						<p>保洁服务</p>
 					</a>
 				</li>
-				<li>
-					<a href="#">
-						<img src="images/nav2.png" alt="">
-						<p>家电清洗</p>
-					</a>
-				</li>
-				<li>
-					<a href="#">
+				<li onclick="liChange(1)">
+					<a href="allserves.html#s2">
 						<img src="images/nav3.png" alt="">
 						<p>家居保养</p>
 					</a>
 				</li>
 				<li>
-					<a href="#">
-						<img src="images/nav4.png" alt="">
-						<p>居家换新</p>
+					<a href="allserves.html#s3">
+						<img src="images/nav2.png" alt="">
+						<p>家电清洗</p>
 					</a>
 				</li>
 				<li>
-					<a href="#">
-						<img src="images/nav5.png" alt="">
-						<p>洗护服务</p>
-					</a>
-				</li>
-				<li>
-					<a href="#">
+					<a href="allserves.html#s4">
 						<img src="images/nav6.png" alt="">
 						<p>保姆月嫂</p>
 					</a>
 				</li>
 				<li>
-					<a href="#">
+					<a href="allserves.html#s5">
+						<img src="images/nav4.png" alt="">
+						<p>居家换新</p>
+					</a>
+				</li>
+				<li>
+					<a href="allserves.html#s6">
 						<img src="images/nav7.png" alt="">
 						<p>维修服务</p>
 					</a>
 				</li>
 				<li>
-					<a href="#">
+					<a href="allserves.html#s7">
+						<img src="images/nav5.png" alt="">
+						<p>洗护服务</p>
+					</a>
+				</li>
+				<li>
+					<a href="allserves.html">
 						<img src="images/nav8.png" alt="">
 						<p>更多服务</p>
 					</a>
@@ -123,90 +136,104 @@
 			</section>
 			<section class="product_box">
 				<!-- 头部 -->
-				<div class="product_box_tit"><h3>常用服务</h3></div>
+				<div class="product_box_tit">
+					<h3>常用服务</h3></div>
 				<!-- 内容 -->
 				<div class="product_box_con clearfix">
 					<a href="#" class="f_left w_50 b_right">
 						<div>
 							<p class="c1">日常保洁</p>
 							<p class="c4 t_center">2小时起，会员享优惠</p>
-						</div>						
+						</div>
 						<img src="images/RiChangQingJie.png">
 					</a>
 					<a href="#" class="f_right w_30 b_bottom">
 						<div>
 							<p class="c2">擦玻璃</p>
 							<p class="c4">洁净明亮如初</p>
-						</div>					
+						</div>
 						<img src="images/CaBoLi.png">
 					</a>
 					<a href="#" class="f_right w_30">
 						<div>
 							<p class="c3">深度保洁</p>
 							<p class="c4">家里焕然一新</p>
-						</div>					
+						</div>
 						<img src="images/ShenDuBaoJie.png">
 					</a>
 				</div>
 			</section>
 			<section class="product_box">
 				<!-- 头部 -->
-				<div class="product_box_tit"><h3>健康服务</h3></div>
+				<div class="product_box_tit">
+					<h3>健康服务</h3></div>
 				<!-- 内容 -->
 				<div class="product_box_con clearfix">
 					<div class="product_box_con clearfix">
-					<a href="#" class="f_right w_50 b_left">
-						<div>
-							<p class="c1">深度保洁</p>
-							<p class="c4 t_center">享受新家感觉</p>
-						</div>						
-						<img src="images/RiChangQingJie.png">
-					</a>
-					<a href="#" class="f_left w_30 b_bottom">
-						<div>
-							<p class="c2">除甲醇</p>
-							<p class="c4">安心住新房</p>
-						</div>					
-						<img src="images/CaBoLi.png">
-					</a>
-					<a href="#" class="f_left w_30">
-						<div>
-							<p class="c3">深度除螨</p>
-							<p class="c4">健康好生活</p>
-						</div>					
-						<img src="images/ShenDuBaoJie.png">
-					</a>
-				</div>
+						<a href="#" class="f_right w_50 b_left">
+							<div>
+								<p class="c1">深度保洁</p>
+								<p class="c4 t_center">享受新家感觉</p>
+							</div>
+							<img src="images/RiChangQingJie.png">
+						</a>
+						<a href="#" class="f_left w_30 b_bottom">
+							<div>
+								<p class="c2">除甲醇</p>
+								<p class="c4">安心住新房</p>
+							</div>
+							<img src="images/CaBoLi.png">
+						</a>
+						<a href="#" class="f_left w_30">
+							<div>
+								<p class="c3">深度除螨</p>
+								<p class="c4">健康好生活</p>
+							</div>
+							<img src="images/ShenDuBaoJie.png">
+						</a>
+					</div>
 				</div>
 			</section>
-			
+
 			<section style="height: 100px;width: 100%;"></section>
 		</main>
-		
+
 		<footer id="footer">
-			<a href="#" class="tab tab_on">
-				<div><img src="" class="index_icon"/></div>
+			<a href="index.html" class="tab tab_on">
+				<div><img src="" class="index_icon" /></div>
 				<p>易生活</p>
 			</a>
-			<a href="#" class="tab tab_on">
-				<div><img src="" class="index_icon"/></div>
+			<a href="order.html" class="tab tab_on">
+				<div><img src="" class="index_icon" /></div>
 				<p>订单</p>
 			</a>
-			<a href="#" class="tab tab_on">
-				<div><img src="" class="index_icon"/></div>
+			<a href="member.html" class="tab tab_on">
+				<div><img src="" class="index_icon" /></div>
 				<p>会员</p>
 			</a>
-			<a href="#" class="tab tab_on">
-				<div><img src="" class="index_icon"/></div>
+			<a href="about.html" class="tab tab_on">
+				<div><img src="" class="index_icon" /></div>
 				<p>我的</p>
 			</a>
 		</footer>
 
 	</div>
-	
-	
+
 	<script type="text/javascript" src="js/common.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>
-	<script type="text/javascript" src="js/zepto.min.js" ></script>
+	<script type="text/javascript" src="js/zepto.min.js"></script>
+	<script>
+		function liChange(index) {
+			console.log('aaaa');
+			var oli = $('#serves_left_ul').find('li');
+			for(var j = 0; j < $(oli).length; j++) {
+				$($(oli)[j]).removeClass('active');
+			}
+			$($(oli)[index]).addClass('active');
+
+			console.log('aaaa' + index);
+		};
+	</script>
 </body>
+
 </html>
