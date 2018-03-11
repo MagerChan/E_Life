@@ -1,0 +1,84 @@
+.no_address{
+	width: 100%;	
+	margin-top: 150px;
+	display: none;
+}
+
+.no_address p{
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	font-size: 14px;
+	color: #999999;
+	margin-bottom: 10px;
+}
+
+.no_address a{
+	width: 40%;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	background: #00BEAF;
+	color: #FFFFFF;
+	display: block;
+	border-radius: 5px;
+	margin: 0 auto;
+}
+
+.has_address{
+	width: 100%;
+	margin-top: 70px;
+}
+
+.address{
+	width: 100%;
+	height: 60px;
+	margin-top: 10px;
+	background: #FFFFFF;
+	display: block;
+}
+
+.addr_left{
+	width: 60%;
+	float: left;
+	padding-left: 10px;
+}
+
+.addr_left p:first-child{
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	text-align: left;
+	font-size: 16px;
+	font-weight: 700;
+}
+.addr_left p:last-child{
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	text-align: left;
+}
+
+.addr_right{
+	width: 40%;
+	height: 60px;
+	float: left;
+	padding-top: 10px;
+	padding-right: 10px;
+	text-align: right;
+	font-weight: 700;
+}
+
+.addr_foot{
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	background: #00BEAE;
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 18px;
+	display: block;
+}

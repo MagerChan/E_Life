@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+		<title>易生活</title>
+		<link rel="stylesheet" type="text/css" href="css/base.css">
+		<link rel="stylesheet" type="text/css" href="css/index.css">
+		<link rel="stylesheet" href="css/add_addr_gps.css" />
+		<script type="text/javascript" src="js/zepto.min.js"></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=3rn8kiB7TrH7pUnXUoqmlkN9LEwXAoXD"></script>
+	</head>
+
+	<body>
+		<!--<p id="demo">点击这个按钮，获得您的坐标：</p>-->
+		<!--<div id="gps"></div>
+		
+		<div id="mapholder"></div>-->
+		<div id="allmap"></div>
+		<button onclick="getLocation()">试一下</button>
+	</body>
+
+</html>
+
+<script type="text/javascript">
+	function getLocation() {
+		if(navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(showPosition, showError);
+		} else {
+			$('#allmap').html("Geolocation is not supported by this browser.");
+		}
+	}
+
+	function showPosition(position) {
+		lat = position.coords.latitude;
+		lon = position.coords.longitude;
+
+		// 百度地图API功能
+		// 用经纬度设置地图中心点
+		var map = new BMap.Map("allmap");
+		map.enableScrollWheelZoom(true);
+		map.centerAndZoom(new BMap.Point(lon, lat), 20);
+		var new_point = new BMap.Point(lon, lat);
+		var marker = new BMap.Marker(new_point); // 创建标注
+		map.addOverlay(marker); // 将标注添加到地图中
+		map.panTo(new_point);	
+	}
+
+	function showError(error) {
+		switch(error.code) {
+			case error.PERMISSION_DENIED:
+				$('#gps').html("User denied the request for Geolocation.");
+				break;
+			case error.POSITION_UNAVAILABLE:
+				$('#gps').html("Location information is unavailable.");
+				break;
+			case error.TIMEOUT:
+				$('#gps').html("The request to get user location timed out.");
+				break;
+			case error.UNKNOWN_ERROR:
+				$('#gps').html("An unknown error occurred.");
+				break;
+		}
+	}
+</script>

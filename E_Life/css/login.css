@@ -74,6 +74,10 @@
 	margin: 10px auto;
 }
 
+#regx{
+	border-top: none;
+}
+
 #regx a{
 	color: #00BEAE;
 	background: none;
