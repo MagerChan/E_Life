@@ -84,8 +84,7 @@ function banner() {
 	var timer = setInterval(function() {
 		/*箱子滚动*/
 		index++;
-		/*定位 过渡来做定位的，这样才有动画
-		加过渡*/
+		/*定位 过渡来做定位的，这样才有动画加过渡*/
 		addTransition();
 		/*改变位置*/
 		setTranslateX(-index * w);
@@ -206,6 +205,25 @@ function footer() {
 					newsrc2 = src1 + '' + src2;
 					$($(oAs)[j]).find('img').attr('src',newsrc2);
 				}
+				var now_p=$($(oAs)[j]).find('p');
+				$(now_p).removeClass('tab_p_on');
+				
+				$($('.layout').find('.tabbox')).css('display','none');
+			}
+			
+			var idid=$(this).attr('id');
+			if(idid=='index'){
+				var tabbox1=$('.layout').find('.tabbox')[0];
+				$(tabbox1).css('display','block');
+			}else if(idid=='order'){
+				var tabbox2=$('.layout').find('.tabbox')[1];
+				$(tabbox2).css('display','block');
+			}else if(idid=='member'){
+				var tabbox3=$('.layout').find('.tabbox')[2];
+				$(tabbox3).css('display','block');
+			}else if(idid=='about'){
+				var tabbox4=$('.layout').find('.tabbox')[3];
+				$(tabbox4).css('display','block');
 			}
 
 			var src_1 = $(this).find('img').attr('src');
@@ -214,6 +232,7 @@ function footer() {
 			var src2_1 = src_1.substring(index, src_1.length);
 			var newsrc = src1_1 + '_on' + src2_1;
 			$(this).find('img').attr('src', newsrc);
+			$(this).find('p').addClass('tab_p_on');
 		});
 	}
 }

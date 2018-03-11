@@ -6,214 +6,406 @@
 	<title>易生活</title>
 	<link rel="stylesheet" type="text/css" href="css/base.css">
 	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" href="css/about.css" />
+	<link rel="stylesheet" href="css/order.css" />
+	<link rel="stylesheet" href="css/member.css" />
 </head>
 
 <body>
 	<div class="layout">
-		<!-- 搜索头部 -->
-		<header class="header">
-			<div class="header_box">
-				<a href="#" class="location">
-					<!--定位到某一个城市-->
-					<img src="" />
-					<div class="city">深圳</div>
-				</a>
-				<div class="appname">易生活</div>
+		<div class="tabbox">
+			<!-- 搜索头部 -->
+			<header class="header">
+				<div class="header_box">
+					<a href="#" class="location">
+						<!--定位到某一个城市-->
+						<img src="" />
+						<div class="city">深圳</div>
+					</a>
+					<div class="appname">易生活</div>
+				</div>
+			</header>
+
+			<!-- 轮播图 -->
+			<div class="banner">
+				<ul class="clearfix">
+					<li>
+						<a href="#"><img src="images/l3.jpg" alt=""></a>
+					</li>
+					<li>
+						<a href="#"><img src="images/l1.jpg" alt=""></a>
+					</li>
+					<li>
+						<a href="#"><img src="images/l2.jpg" alt=""></a>
+					</li>
+					<li>
+						<a href="#"><img src="images/l3.jpg" alt=""></a>
+					</li>
+					<li>
+						<a href="#"><img src="images/l1.jpg" alt=""></a>
+					</li>
+				</ul>
+				<ul>
+					<li class="now"></li>
+					<li></li>
+					<li></li>
+				</ul>
 			</div>
-		</header>
 
-		<!-- 轮播图 -->
-		<div class="banner">
-			<ul class="clearfix">
-				<li>
-					<a href="#"><img src="images/l3.jpg" alt=""></a>
-				</li>
-				<li>
-					<a href="#"><img src="images/l1.jpg" alt=""></a>
-				</li>
-				<li>
-					<a href="#"><img src="images/l2.jpg" alt=""></a>
-				</li>
-				<li>
-					<a href="#"><img src="images/l3.jpg" alt=""></a>
-				</li>
-				<li>
-					<a href="#"><img src="images/l1.jpg" alt=""></a>
-				</li>
-			</ul>
-			<ul>
-				<li class="now"></li>
-				<li></li>
-				<li></li>
-			</ul>
-		</div>
+			<!-- 导航栏 -->
+			<nav class="nav">
+				<ul id="nav_ul" class="clearfix">
+					<li onclick="liChange(0)">
+						<a href="allserves.html#s1">
+							<img src="images/nav1.png" alt="">
+							<p>保洁服务</p>
+						</a>
+					</li>
+					<li onclick="liChange(1)">
+						<a href="allserves.html#s2">
+							<img src="images/nav3.png" alt="">
+							<p>家居保养</p>
+						</a>
+					</li>
+					<li>
+						<a href="allserves.html#s3">
+							<img src="images/nav2.png" alt="">
+							<p>家电清洗</p>
+						</a>
+					</li>
+					<li>
+						<a href="allserves.html#s4">
+							<img src="images/nav6.png" alt="">
+							<p>保姆月嫂</p>
+						</a>
+					</li>
+					<li>
+						<a href="allserves.html#s5">
+							<img src="images/nav4.png" alt="">
+							<p>居家换新</p>
+						</a>
+					</li>
+					<li>
+						<a href="allserves.html#s6">
+							<img src="images/nav7.png" alt="">
+							<p>维修服务</p>
+						</a>
+					</li>
+					<li>
+						<a href="allserves.html#s7">
+							<img src="images/nav5.png" alt="">
+							<p>洗护服务</p>
+						</a>
+					</li>
+					<li>
+						<a href="allserves.html">
+							<img src="images/nav8.png" alt="">
+							<p>更多服务</p>
+						</a>
+					</li>
+				</ul>
+			</nav>
 
-		<!-- 导航栏 -->
-		<nav class="nav">
-			<ul id="nav_ul" class="clearfix">
-				<li onclick="liChange(0)">
-					<a href="allserves.html#s1">
-						<img src="images/nav1.png" alt="">
-						<p>保洁服务</p>
-					</a>
-				</li>
-				<li onclick="liChange(1)">
-					<a href="allserves.html#s2">
-						<img src="images/nav3.png" alt="">
-						<p>家居保养</p>
-					</a>
-				</li>
-				<li>
-					<a href="allserves.html#s3">
-						<img src="images/nav2.png" alt="">
-						<p>家电清洗</p>
-					</a>
-				</li>
-				<li>
-					<a href="allserves.html#s4">
-						<img src="images/nav6.png" alt="">
-						<p>保姆月嫂</p>
-					</a>
-				</li>
-				<li>
-					<a href="allserves.html#s5">
-						<img src="images/nav4.png" alt="">
-						<p>居家换新</p>
-					</a>
-				</li>
-				<li>
-					<a href="allserves.html#s6">
-						<img src="images/nav7.png" alt="">
-						<p>维修服务</p>
-					</a>
-				</li>
-				<li>
-					<a href="allserves.html#s7">
-						<img src="images/nav5.png" alt="">
-						<p>洗护服务</p>
-					</a>
-				</li>
-				<li>
-					<a href="allserves.html">
-						<img src="images/nav8.png" alt="">
-						<p>更多服务</p>
-					</a>
-				</li>
-			</ul>
-		</nav>
-
-		<!-- 商品 -->
-		<main class="product">
-			<!-- 商品子盒子 -->
-			<section class="product_box sk">
-				<!-- 头部 -->
-				<div class="product_box_tit no_border">
-					<div class="f_left m_l10">
-						<span class="sk_icon"></span>
-						<span class="sk_name m_l10">热门套餐</span>
+			<!-- 商品 -->
+			<main class="product">
+				<!-- 商品子盒子 -->
+				<section class="product_box sk">
+					<!-- 头部 -->
+					<div class="product_box_tit no_border">
+						<div class="f_left m_l10">
+							<span class="sk_icon"></span>
+							<span class="sk_name m_l10">热门套餐</span>
+						</div>
 					</div>
-				</div>
-				<!-- 内容 -->
-				<div class="product_box_con">
-					<ul class="clearfix">
-						<li>
-							<a href="#"><img src="images/detail01.jpg"></a>
-							<p>家电组合套餐</p>
-							<p>&yen;368.00</p>
-						</li>
-						<li>
-							<a href="#"><img src="images/detail02.jpg"></a>
-							<p>厨房保养套餐</p>
-							<p>&yen;468.00</p>
-						</li>
-						<li>
-							<a href="#"><img src="images/detail01.jpg"></a>
-							<p>卫生间保养套餐</p>
-							<p>&yen;398.00</p>
-						</li>
-					</ul>
-				</div>
-			</section>
-			<section class="product_box">
-				<!-- 头部 -->
-				<div class="product_box_tit">
-					<h3>常用服务</h3></div>
-				<!-- 内容 -->
-				<div class="product_box_con clearfix">
-					<a href="#" class="f_left w_50 b_right">
-						<div>
-							<p class="c1">日常保洁</p>
-							<p class="c4 t_center">2小时起，会员享优惠</p>
-						</div>
-						<img src="images/RiChangQingJie.png">
-					</a>
-					<a href="#" class="f_right w_30 b_bottom">
-						<div>
-							<p class="c2">擦玻璃</p>
-							<p class="c4">洁净明亮如初</p>
-						</div>
-						<img src="images/CaBoLi.png">
-					</a>
-					<a href="#" class="f_right w_30">
-						<div>
-							<p class="c3">深度保洁</p>
-							<p class="c4">家里焕然一新</p>
-						</div>
-						<img src="images/ShenDuBaoJie.png">
-					</a>
-				</div>
-			</section>
-			<section class="product_box">
-				<!-- 头部 -->
-				<div class="product_box_tit">
-					<h3>健康服务</h3></div>
-				<!-- 内容 -->
-				<div class="product_box_con clearfix">
+					<!-- 内容 -->
+					<div class="product_box_con">
+						<ul class="clearfix">
+							<li>
+								<a href="#"><img src="images/detail01.jpg"></a>
+								<p>家电组合套餐</p>
+								<p>&yen;368.00</p>
+							</li>
+							<li>
+								<a href="#"><img src="images/detail02.jpg"></a>
+								<p>厨房保养套餐</p>
+								<p>&yen;468.00</p>
+							</li>
+							<li>
+								<a href="#"><img src="images/detail01.jpg"></a>
+								<p>卫生间保养套餐</p>
+								<p>&yen;398.00</p>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="product_box">
+					<!-- 头部 -->
+					<div class="product_box_tit">
+						<h3>常用服务</h3></div>
+					<!-- 内容 -->
 					<div class="product_box_con clearfix">
-						<a href="#" class="f_right w_50 b_left">
+						<a href="#" class="f_left w_50 b_right">
 							<div>
-								<p class="c1">深度保洁</p>
-								<p class="c4 t_center">享受新家感觉</p>
+								<p class="c1">日常保洁</p>
+								<p class="c4 t_center">2小时起，会员享优惠</p>
 							</div>
 							<img src="images/RiChangQingJie.png">
 						</a>
-						<a href="#" class="f_left w_30 b_bottom">
+						<a href="#" class="f_right w_30 b_bottom">
 							<div>
-								<p class="c2">除甲醇</p>
-								<p class="c4">安心住新房</p>
+								<p class="c2">擦玻璃</p>
+								<p class="c4">洁净明亮如初</p>
 							</div>
 							<img src="images/CaBoLi.png">
 						</a>
-						<a href="#" class="f_left w_30">
+						<a href="#" class="f_right w_30">
 							<div>
-								<p class="c3">深度除螨</p>
-								<p class="c4">健康好生活</p>
+								<p class="c3">深度保洁</p>
+								<p class="c4">家里焕然一新</p>
 							</div>
 							<img src="images/ShenDuBaoJie.png">
 						</a>
 					</div>
+				</section>
+				<section class="product_box">
+					<!-- 头部 -->
+					<div class="product_box_tit">
+						<h3>健康服务</h3></div>
+					<!-- 内容 -->
+					<div class="product_box_con clearfix">
+						<div class="product_box_con clearfix">
+							<a href="#" class="f_right w_50 b_left">
+								<div>
+									<p class="c1">深度保洁</p>
+									<p class="c4 t_center">享受新家感觉</p>
+								</div>
+								<img src="images/RiChangQingJie.png">
+							</a>
+							<a href="#" class="f_left w_30 b_bottom">
+								<div>
+									<p class="c2">除甲醇</p>
+									<p class="c4">安心住新房</p>
+								</div>
+								<img src="images/CaBoLi.png">
+							</a>
+							<a href="#" class="f_left w_30">
+								<div>
+									<p class="c3">深度除螨</p>
+									<p class="c4">健康好生活</p>
+								</div>
+								<img src="images/ShenDuBaoJie.png">
+							</a>
+						</div>
+					</div>
+				</section>
+
+				<section style="height: 100px;width: 100%;"></section>
+			</main>
+		</div>
+
+		<div class="tabbox dis_none">
+			<!-- 订单头部 -->
+			<header class="header">
+				<div class="header_box_order">
+					<a href="#" class="p1">我的订单</a>
+					<a href="#" class="p2">历史订单</a>
+				</div>
+			</header>
+
+			<!--订单盒子-->
+			<section class="orderbox">
+				<div class="order_div1">
+					<div class="order_name">日常清洁</div>
+					<div class="order_status">已完成</div>
+				</div>
+				<div class="order_div2">
+					<img class="order_img" />
+					<div class="order_desc">2小时起，会员享优惠2小时起，会员享优惠2小时起，会员享优惠</div>
+				</div>
+				<div class="order_money">合计：￥216.00</div>
+				<div class="order_judge">
+					<a href="#">评价</a>
 				</div>
 			</section>
 
+			<section class="orderbox">
+				<div class="order_div1">
+					<div class="order_name">擦玻璃</div>
+					<div class="order_status">进行中</div>
+				</div>
+				<div class="order_div2">
+					<img class="order_img" />
+					<div class="order_desc">2小时起，会员享优惠2小时起，会员享优惠</div>
+				</div>
+				<div class="order_money">合计：￥216.00</div>
+				<div class="order_judge">
+					<a href="#">评价</a>
+				</div>
+			</section>
+
+			<section class="orderbox">
+				<div class="order_div1">
+					<div class="order_name">卫生间洗护套餐</div>
+					<div class="order_status">未付款</div>
+				</div>
+				<div class="order_div2">
+					<img class="order_img" />
+					<div class="order_desc">2小时起，会员享优惠2小时起，会员享优惠2小时起，会员享优惠</div>
+				</div>
+				<div class="order_money">合计：￥216.00</div>
+				<div class="order_judge">
+					<a href="#">评价</a>
+				</div>
+			</section>
+
+			<section class="orderbox">
+				<div class="order_div1">
+					<div class="order_name">厨房洗护套餐</div>
+					<div class="order_status">确认中</div>
+				</div>
+				<div class="order_div2">
+					<img class="order_img" />
+					<div class="order_desc">2小时起，会员享优惠2小时起，会员享优惠2小时起，会员享优惠</div>
+				</div>
+				<div class="order_money">合计：￥216.00</div>
+				<div class="order_judge">
+					<a href="#">评价</a>
+				</div>
+			</section>
+
+			<section style="height: 200px;width: 100%;"></section>
+		</div>
+
+		<div class="tabbox dis_none">
+			<!-- 会员头部 -->
+			<header class="header">
+				<div class="header_box_order">
+					<a href="#" class="p1">会员</a>
+					<a href="#" class="p2">会员特权</a>
+				</div>
+			</header>
+
+			<section class="memberbox">
+				<div class="icon_pay"><img/></div>
+				<div class="member_rank">
+					<p class="p_title">充值500元</p>
+					<p class="p_desc">赠送价值30元的优惠券</p>
+				</div>
+				<div class="member_pay">立即购买</div>
+			</section>
+
+			<section class="memberbox">
+				<div class="icon_pay"><img/></div>
+				<div class="member_rank">
+					<p class="p_title">充值1000元</p>
+					<p class="p_desc">赠送价值100元的优惠券</p>
+				</div>
+				<div class="member_pay">立即购买</div>
+			</section>
+
+			<section class="memberbox">
+				<div class="icon_pay"><img/></div>
+				<div class="member_rank">
+					<p class="p_title">充值2000元</p>
+					<p class="p_desc">赠送价值220元的优惠券</p>
+				</div>
+				<div class="member_pay">立即购买</div>
+			</section>
+
+			<section class="memberbox">
+				<div class="icon_pay"><img/></div>
+				<div class="member_rank">
+					<p class="p_title">充值3000元</p>
+					<p class="p_desc">赠送价值400元的优惠券</p>
+				</div>
+				<div class="member_pay">立即购买</div>
+			</section>
+
+			<section class="memberbox">
+				<div class="icon_pay"><img/></div>
+				<div class="member_rank">
+					<p class="p_title">充值5000元</p>
+					<p class="p_desc">赠送价值800元的优惠券</p>
+				</div>
+				<div class="member_pay">立即购买</div>
+			</section>
+
 			<section style="height: 100px;width: 100%;"></section>
-		</main>
+		</div>
+
+		<div class="tabbox dis_none">
+			<div class="login_box">
+				<div class="login_icon"><img src="" /></div>
+				<a class="login_btn">请登录</a>
+			</div>
+
+			<div class="select">
+				<a href="#">
+					<div class="select_icon"><img src="" /></div>
+					<div class="select_name">服务地址</div>
+					<div class="go_icon"><img src="" /></div>
+				</a>
+			</div>
+			<div class="select">
+				<a href="#">
+					<div class="select_icon"><img src="" /></div>
+					<div class="select_name">邀请好友</div>
+					<div class="go_icon"><img src="" /></div>
+				</a>
+			</div>
+			<div class="select">
+				<a href="#">
+					<div class="select_icon"><img src="" /></div>
+					<div class="select_name">优惠券</div>
+					<div class="go_icon"><img src="" /></div>
+				</a>
+			</div>
+			<div class="select m_t10">
+				<a href="#">
+					<div class="select_icon"><img src="" /></div>
+					<div class="select_name">在线客服</div>
+					<div class="go_icon"><img src="" /></div>
+				</a>
+			</div>
+			<div class="select m_t10">
+				<a href="#">
+					<div class="select_icon"><img src="" /></div>
+					<div class="select_name">意见反馈</div>
+					<div class="go_icon"><img src="" /></div>
+				</a>
+			</div>
+			<div class="select">
+				<a href="#">
+					<div class="select_icon"><img src="" /></div>
+					<div class="select_name">诚聘阿姨/技师</div>
+					<div class="go_icon"><img src="" /></div>
+				</a>
+			</div>
+			<div class="select">
+				<a href="#">
+					<div class="select_icon"><img src="" /></div>
+					<div class="select_name">更多设置</div>
+					<div class="go_icon"><img src="" /></div>
+				</a>
+			</div>
+		</div>
 
 		<footer id="footer">
-			<a href="index.html" class="tab tab_on">
+			<a id="index" href="javascript:void(0);" class="tab">
 				<div><img src="images/elife_on.png" class="index_icon" /></div>
-				<p>易生活</p>
+				<p class="tab_p tab_p_on">易生活</p>
 			</a>
-			<a href="#" class="tab tab_on">
+			<a id="order" href="javascript:void(0);" class="tab">
 				<div><img src="images/order.png" class="index_icon" /></div>
-				<p>订单</p>
+				<p class="tab_p">订单</p>
 			</a>
-			<a href="#" class="tab tab_on">
+			<a id="member" href="javascript:void(0);" class="tab">
 				<div><img src="images/member.png" class="index_icon" /></div>
-				<p>会员</p>
+				<p class="tab_p">会员</p>
 			</a>
-			<a href="#" class="tab tab_on">
+			<a id="about" href="javascript:void(0);" class="tab">
 				<div><img src="images/mine.png" class="index_icon" /></div>
-				<p>我的</p>
+				<p class="tab_p">我的</p>
 			</a>
 		</footer>
 

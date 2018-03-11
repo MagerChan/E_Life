@@ -351,7 +351,7 @@ E:nth-of-type(n)选择同类型的同级的 第n个元素
 
 #footer{
 	width: 100%;
-	height: 80px;
+	height: 60px;
 	background:#FFFFFF;
 	border-top: 1px solid #e0e0e0;
 	position: fixed;/* 是以window最外层容器计算 */
@@ -363,16 +363,16 @@ E:nth-of-type(n)选择同类型的同级的 第n个元素
 .tab{
 	width: 25%;
 	height: 100%;
-	padding: 10px 0;
+	padding: 5px 0;
 	float: left;
 }
 .index_icon{
-	width: 40px;
-	height: 40px;
+	width: 30px;
+	height: 30px;
 	margin: 0 auto;
 	display: block;
 }
-.tab p{
+.tab_p{
 	width: 100%;
 	height: 16px;
 	line-height: 16px;
@@ -380,5 +380,9 @@ E:nth-of-type(n)选择同类型的同级的 第n个元素
 	text-align: center;
 	font-size: 14px;
 	color: #333333;
+}
+
+.tab_p_on{
+	color: #00BEAE;
 }
 
