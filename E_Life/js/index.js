@@ -12,6 +12,9 @@ window.onload = function() {
 	footer();
 };
 
+/*定义用户获取到的地址信息*/
+window.order_addr_info='';
+
 /*定义一个全局变量*/
 window.itcast={};/*存储我们将要封装的事件方式*/
 /*设置属性 定义一个transitionEnd一个事件绑定方法*/
@@ -266,16 +269,6 @@ $('#locationback').click(function(){
 
 $('#allserveback').click(function(){
 	location.replace('../../debug/tmpl/index.html');
-});
-
-$('#ordernow').click(function(){
-//	if(username == ""){
-//		location.href="../../debug/tmpl/login.html";
-//	}else{
-//		location.href="../../debug/tmpl/place_order.html";
-//	}
-
-	location.href="../../debug/tmpl/place_order.html";
 });
 
 // 汉字拼音首字母列表 本列表包含了20902个汉字,用于配合 ToChineseSpell

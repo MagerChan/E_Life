@@ -1,3 +1,6 @@
+var serve_weekday_='';
+var serve_time_='';
+
 $('#addservetime').click(function() {
 	$('#serveday').css('display','block');
 	insert_serveday(5);
@@ -83,6 +86,8 @@ function onTagClick(obj) {
 	$('#servetime'+pos).css('display','block');
 	
 	/*获取星期的数据*/
+	console.log(obj_);
+	//serve_weekday_=
 }
 
 function onServeTimeClick(obj,flag){
@@ -95,6 +100,8 @@ function onServeTimeClick(obj,flag){
 	$('#servetimeitem_tag_'+flag+'_'+pos).addClass('selectitem');
 	
 	/*获取时间是数据*/
+	console.log(obj_);
+	//serve_time_=
 }
 
 /*判断是星期几*/
@@ -259,6 +266,52 @@ $('#palceorderback').click(function(){
 
 /*获取各种数据，进行提交订单
  直接获取服务时间和阿姨数量的数据
- 获取服务地址的数据，需要返回
+ 获取服务地址的数据，需要地址页面的返回
  获取上门时间的数据
  * */
+console.log(order_addr_info);
+
+$('#place_order').click(function(){
+	//serve_weekday_   服务时间
+	//serve_time_		上门时间
+	//order_addr_info	地址信息
+	//$('#hournum').html();		服务时长
+	//$('#auntnum').html();		阿姨数量
+	//userid   用户的id
+	//订单提交时间
+	//订单状态
+	//服务类型
+	//费用明细
+	
+	/*$.ajax({
+		type: "get",
+		url: 'http://elife.com/place_order.php?',
+		dataType: 'jsonp',
+		jsonp: "jsoncallback",
+		timeout: 15000,
+		success: function(data) {
+			if(data.ret) {
+				addorderSuccess();
+			} else {
+				addorderFail();
+			}
+		},
+		error: function(XMLHttpRequest, textStatus, errorThrown) {
+			console.log(XMLHttpRequest.readyState);
+			console.log(XMLHttpRequest.status);
+			console.log(textStatus);
+			ELife_UI.Toast.show('服务器繁忙，请稍后重试');
+			window.setTimeout(function() {
+				ELife_UI.Toast.hide();
+			}, 2000);
+		}
+	});*/
+});
+
+function addorderSuccess(){
+	
+}
+
+function addorderFail(){
+	
+}

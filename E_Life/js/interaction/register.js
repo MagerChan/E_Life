@@ -72,8 +72,7 @@ function up_user_info(tel_,pwd_){
 				ELife_UI.Toast.hide();
 			},2000);
         }  
-    }  
-); 
+    }); 
 }
 
 function insertSuccess(){

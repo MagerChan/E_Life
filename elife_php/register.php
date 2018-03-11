@@ -1,6 +1,8 @@
 <?php
     ini_set("error_reporting","E_ALL & ~E_NOTICE");
 
+    session_start();
+
     $data = array("ret"=>false, "msg"=>"","username"=>"");
     
     $tel=$_GET['tel'];
@@ -30,8 +32,19 @@
 	        $stmt = $conn->prepare($sql);
 	        $data['ret']=$stmt->execute();
             $data['username']=$tel;
+            $_SESSION['tel']=$tel;
 	        if (!$data["ret"]) {
                 $data["msg"] = $stmt->errorInfo();
+            }
+
+            $sql = "select * from elife_user where tel='$tel' and pwd='$pwd'";
+            $stmt = $conn->prepare($sql);
+            $stmt->execute();
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            if (count($result)){
+                $_SESSION['userid']=$result[0]['_id'];
+            }else{
+                $data['ret']=false;
             }
 	    }
 	    catch(PDOException $e)

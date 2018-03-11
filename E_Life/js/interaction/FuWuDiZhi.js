@@ -1,5 +1,7 @@
 var curExtendItem = null;
 var chooseContent = '';
+
+/*需要传入用户id*/
 var userid=4;
 
 /*判断从那个页面进入到服务地址的页面，已显示不同的选择*/
@@ -8,7 +10,6 @@ if(urlobj != null && urlobj.toString().length > 1) {
 	urlobj = GetQueryString("page")
 }
 
-/*需要传入用户id*/
 get_addr(userid);
 
 function get_addr(id) {
@@ -24,7 +25,7 @@ function get_addr(id) {
 					insert_addr(data.result[i]["name"], data.result[i]["detail_addr"], data.result[i]["tel"],data.result[i]['_id']);
 				}
 			} else {
-				getaddrFail();
+				editaddrFail();
 			}
 		},
 		error: function(XMLHttpRequest, textStatus, errorThrown) {
@@ -112,8 +113,11 @@ function onitemClick(obj) {
 function onChooseAlbum(obj) {
 	chooseContent = $(obj).parent().parent().find('.addr_left').find('p:last-child').html();
 	/*把参数传回去*/
+	order_addr_info=chooseContent;
 	
-	/*window.history.back();*/
+	console.log(order_addr_info);
+	
+	window.history.back();
 }
 
 function onEditAlbum(obj,id) {
@@ -136,8 +140,6 @@ function onDeleteAddrClk(obj) {
 		title: '',
 		message: '确定要删除地址吗?',
 		ok: function() {
-			/*var addr_id = $(obj).data('id');
-			console.log(addr_id);*/
 			var root=$(obj).parent().parent().parent();
 			var addr_id=root.data('addr_id');
 

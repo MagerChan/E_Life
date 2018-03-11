@@ -7,7 +7,7 @@
 		<link rel="stylesheet" type="text/css" href="../css/main.min.css">
 	</head>
 	<body>
-		<div class="layout">
+		<div class="layout" id="placeorder_page">
 			<header class="header">
 				<div class="header_box_order">
 					<div class="p1">添加订单</div>
@@ -58,8 +58,85 @@
 			
 		</div>
 		
+		
+		<div class="layout dis_none" id="confirmorder_page">
+			<header class="header">
+				<div class="header_box_order">
+					<div class="p1">确认订单</div>
+					<a href="#" class="back" id="confirmorderback"><img src="#" /></a>
+				</div>
+			</header>
+			
+			<!--订单概况-->
+			<section class="order_whole_sec">
+				<div class="order_whole_">
+					<div>服务类型:</div>
+					<div id="c_order_type">日常保洁</div>
+				</div>
+				<div class="order_whole_">
+					<div>服务地址:</div>
+					<div id="c_order_addr">东方科技大厦416</div>
+				</div>
+				<div class="order_whole_">
+					<div>阿姨数量:</div>
+					<div id="c_order_aunt">1位阿姨</div>
+				</div>
+				<div class="order_whole_">
+					<div>服务时长:</div>
+					<div id="c_order_duration">2小时</div>
+				</div>
+				<div class="order_whole_">
+					<div>上门时间:</div>
+					<div id="c_order_time">5月11日(周四) 9:00</div>
+				</div>
+				<div class="order_whole_">
+					<div>费用明细:</div>
+					<div id="c_order_cost">35元 x2</div>
+				</div>
+				<div class="explain">
+					服务前2小时取消订单，将扣除您50%的预付费；预定服务时间之后取消订单，将扣除您100%的预付费
+				</div>
+				<div class="allcost">
+					<div><img/></div>
+					<div>
+						<p>支付全款</p>
+						<p>（包含预付费64元）</p>
+					</div>
+					<div>70元</div>
+				</div>
+				
+				
+				<div class="otheritem">
+					<div><img/></div>
+					<div>请选择优惠券</div>
+					<div><img/></div>
+				</div>
+				<div class="otheritem">
+					<div><img/></div>
+					<div>系统推荐阿姨</div>
+					<div><img/></div>
+				</div>
+				<div class="otheritem">
+					<div><img/></div>
+					<div>给阿姨捎话</div>
+					<div><img/></div>
+				</div>
+			</section>
+	
+			<div class="confirmfinally">
+				<div>
+					<p>￥70</p>
+					<p>会员余额支付立减6元</p>
+				</div>
+				<div>
+					<input type="button" id="confirm_order" value="确认订单" disabled="true"/>
+				</div>			
+			</div>
+		</div>
+		
 		<script type="text/javascript" src="../js/thirdpart/zepto.min.js"></script>
 		<script type="text/javascript" src="../js/main.min.js" ></script>
 		<script type="text/javascript" src="../js/interaction/order.min.js" ></script>
+		<!--<script type="text/javascript" src="../js/interaction/FuWuDiZhi.min.js" ></script>-->
 	</body>
 </html>
