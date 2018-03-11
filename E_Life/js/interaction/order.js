@@ -81,6 +81,8 @@ function onTagClick(obj) {
 	}
 	$('#servedayitem_tag_'+pos).addClass('selectitem');
 	$('#servetime'+pos).css('display','block');
+	
+	/*获取星期的数据*/
 }
 
 function onServeTimeClick(obj,flag){
@@ -91,6 +93,8 @@ function onServeTimeClick(obj,flag){
 		$('#servetimeitem_tag_'+flag+'_'+i).removeClass('selectitem');
 	}
 	$('#servetimeitem_tag_'+flag+'_'+pos).addClass('selectitem');
+	
+	/*获取时间是数据*/
 }
 
 /*判断是星期几*/
@@ -222,9 +226,39 @@ $('#hoursub').click(function(){
 	}
 });
 
+$('#auntadd').click(function(){
+	$('#auntsub').removeClass('nouse');
+	var num=parseInt($('#auntnum').html());
+	num++;
+	if(num < 4){
+		$('#auntnum').html(num);
+		if(num == 3)
+			$('#auntadd').addClass('nouse');
+	}else{
+		$('#auntadd').addClass('nouse');
+	}
+});
+
+$('#auntsub').click(function(){
+	$('#auntadd').removeClass('nouse');
+	var num=parseInt($('#auntnum').html());
+	num--;
+	if(num > 0){
+		$('#auntnum').html(num);
+		if(num == 1)
+			$('#auntsub').addClass('nouse');
+	}else{
+		$('#auntsub').addClass('nouse');
+	}
+});
+
 $('#palceorderback').click(function(){
 	window.history.back();
 });
 
 
-/*获取各种数据，进行提交订单*/
+/*获取各种数据，进行提交订单
+ 直接获取服务时间和阿姨数量的数据
+ 获取服务地址的数据，需要返回
+ 获取上门时间的数据
+ * */

@@ -10,12 +10,7 @@ window.onload = function() {
 	banner();
 	/*选项卡切换*/
 	footer();
-	/*判断用户是否登录*/
-	is_login();
 };
-
-window.username='';
-window.user_id='';
 
 /*定义一个全局变量*/
 window.itcast={};/*存储我们将要封装的事件方式*/
@@ -264,16 +259,6 @@ function footer() {
 		});
 	}
 }
-
-function is_login(){
-	console.log(username);
-	/*if(un){
-		username=un;
-		$('#login_btn').css('display','none');
-		$('#loginuser').html(un).css('display','block');
-		
-	}*/
-};
 
 $('#locationback').click(function(){
 	location.replace('../../debug/tmpl/index.html');

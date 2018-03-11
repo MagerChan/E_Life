@@ -2,6 +2,7 @@ var curExtendItem = null;
 var chooseContent = '';
 var userid=4;
 
+/*判断从那个页面进入到服务地址的页面，已显示不同的选择*/
 var urlobj = GetQueryString("page");
 if(urlobj != null && urlobj.toString().length > 1) {
 	urlobj = GetQueryString("page")
@@ -40,16 +41,35 @@ function get_addr(id) {
 
 function insert_addr(name, addr, tel,id) {
 	var new_item = document.createElement('a');
-	var innerhtml = "<li class='address'>" +
+	
+	var innerhtml='';
+	if(urlobj == 'index'){
+		var a_width=document.body.offsetWidth*0.45;
+		
+		innerhtml = "<li class='address'>" +
 		"<div class='addr_left'>" +
 		"<p>" + name + "</p>" +
 		"<p>" + addr + "</p>" + "</div>" +
 		"<div class='addr_right'>" + tel + "</div>" +
 		"<div class='div_btn'>" +
-		"<a class='btn_view btn_edit_item'>选中</a>" +
-		"<a class='btn_edit btn_edit_item'>编辑</a>" +
-		"<a class='btn_delete btn_edit_item'>删除</a>" +
+		"<a class='btn_edit btn_edit_item' style='width:"+a_width+"px'>编辑</a>" +
+		"<a class='btn_delete btn_edit_item' style='width:"+a_width+"px'>删除</a>" +
 		"</div></li>";
+		
+	}else if(urlobj == 'order'){
+		var a_width=document.body.offsetWidth*0.3;
+		
+		innerhtml = "<li class='address'>" +
+		"<div class='addr_left'>" +
+		"<p>" + name + "</p>" +
+		"<p>" + addr + "</p>" + "</div>" +
+		"<div class='addr_right'>" + tel + "</div>" +
+		"<div class='div_btn'>" +
+		"<a class='btn_view btn_edit_item' style='width:"+a_width+"px'>选中</a>" +
+		"<a class='btn_edit btn_edit_item' style='width:"+a_width+"px'>编辑</a>" +
+		"<a class='btn_delete btn_edit_item' style='width:"+a_width+"px'>删除</a>" +
+		"</div></li>";
+	}
 
 	new_item.innerHTML = innerhtml;
 	$(new_item).data('addr_id',id);
