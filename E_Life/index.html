@@ -225,7 +225,10 @@
 			</header>
 
 			<!--订单盒子-->
-			<section class="orderbox">
+			<section id="all_order">
+				
+			</section>
+			<!--<section class="orderbox">
 				<div class="order_div1">
 					<div class="order_name">日常清洁</div>
 					<div class="order_status">已完成</div>
@@ -238,52 +241,10 @@
 				<div class="order_judge">
 					<a href="#">评价</a>
 				</div>
+			</section>-->
+
 			</section>
 
-			<section class="orderbox">
-				<div class="order_div1">
-					<div class="order_name">擦玻璃</div>
-					<div class="order_status">进行中</div>
-				</div>
-				<div class="order_div2">
-					<img class="order_img" />
-					<div class="order_desc">2小时起，会员享优惠2小时起，会员享优惠</div>
-				</div>
-				<div class="order_money">合计：￥216.00</div>
-				<div class="order_judge">
-					<a href="#">评价</a>
-				</div>
-			</section>
-
-			<section class="orderbox">
-				<div class="order_div1">
-					<div class="order_name">卫生间洗护套餐</div>
-					<div class="order_status">未付款</div>
-				</div>
-				<div class="order_div2">
-					<img class="order_img" />
-					<div class="order_desc">2小时起，会员享优惠2小时起，会员享优惠2小时起，会员享优惠</div>
-				</div>
-				<div class="order_money">合计：￥216.00</div>
-				<div class="order_judge">
-					<a href="#">评价</a>
-				</div>
-			</section>
-
-			<section class="orderbox">
-				<div class="order_div1">
-					<div class="order_name">厨房洗护套餐</div>
-					<div class="order_status">确认中</div>
-				</div>
-				<div class="order_div2">
-					<img class="order_img" />
-					<div class="order_desc">2小时起，会员享优惠2小时起，会员享优惠2小时起，会员享优惠</div>
-				</div>
-				<div class="order_money">合计：￥216.00</div>
-				<div class="order_judge">
-					<a href="#">评价</a>
-				</div>
-			</section>
 
 			<section style="height: 200px;width: 100%;"></section>
 		</div>
@@ -428,7 +389,8 @@
 	<script type="text/javascript" src="../js/main.min.js" ></script>
 	<script type="text/javascript" src="../js/interaction/index.min.js" ></script>
 	<script>
-		get_serve_info();
+		get_user_info();
+		get_order_info();
 	</script>
 </body>
 
