@@ -16,7 +16,7 @@ $('#evaluatebtn').click(function(){
 	var evaluate_content=$('#evaluatecontent').val();
 	$.ajax({  
         type:'get',  
-        url : 'http://elife.com/evaluate.php?orderid='+order_id+'&evaluate='+evaluate_content+'',  
+        url : 'http://139.199.198.216/evaluate.php?orderid='+order_id+'&evaluate='+evaluate_content+'',  
         dataType : 'jsonp',  
         jsonp:"jsoncallback", 
         timeout:15000,

@@ -12,22 +12,22 @@ get_addr();
 function get_addr() {
 	$.ajax({
 		type: "get",
-		url: 'http://elife.com/get_addr.php?',
+		url: 'http://139.199.198.216/get_addr.php?',
 		dataType: 'jsonp',
 		jsonp: "jsoncallback",
 		timeout: 15000,
 		success: function(data) {
 			console.log(data);
-			if(data.ret) {//登录有结果
+			if(data.ret) {
 				$('.no_address').css('display','none');
 				for(var i = 0; i < data.result.length; i++) {
 					insert_addr(data.result[i]["name"], data.result[i]["detail_addr"], data.result[i]["tel"],data.result[i]['_id']);
 				}
-			} else if(data.islogin){//已经登录的
-				$('.no_address').css('display','block');
-			}else {//没有登录的
+			} else if(!data.nologin){
 				$('.no_address').css('display','none');
-				location.href="../../debug/tmpl/login.html";
+				//location.href="../../debug/tmpl/login.html";
+			}else {
+				$('.no_address').css('display','block');
 			}
 		},
 		error: function(XMLHttpRequest, textStatus, errorThrown) {
@@ -118,7 +118,7 @@ function onChooseAlbum(obj,id) {
 	//把服务地址传到服务器session存起来
 	$.ajax({
 		type: "get",
-		url: 'http://elife.com/save_addr_info.php?addr_info='+chooseContent+'&addr_id='+id+'',
+		url: 'http://139.199.198.216/save_addr_info.php?addr_info='+chooseContent+'&addr_id='+id+'',
 		dataType: 'jsonp',
 		jsonp: "jsoncallback",
 		timeout: 15000,
@@ -159,7 +159,7 @@ function onDeleteAddrClk(obj) {
 			var addr_id=root.data('addr_id');
 
 			$.ajax({
-				url: 'http://elife.com/delete_addr.php?addr_id='+addr_id+'',
+				url: 'http://139.199.198.216/delete_addr.php?addr_id='+addr_id+'',
 				type: 'GET',
 				dataType: 'jsonp',
 				jsonp: "jsoncallback",
@@ -245,7 +245,7 @@ $('#save_change_addr').click(function(){
 	
 	$.ajax({
 		type: "get",
-		url: 'http://elife.com/edit_addr.php?name=' + name + '&addr=' + addr + '&tel=' + tel + '&id='+user_id+'',
+		url: 'http://139.199.198.216/edit_addr.php?name=' + name + '&addr=' + addr + '&tel=' + tel + '&id='+user_id+'',
 		dataType: 'jsonp',
 		jsonp: "jsoncallback",
 		timeout: 15000,
@@ -269,7 +269,6 @@ $('#save_change_addr').click(function(){
 });
 
 $('#edit_addr_back').click(function(){
-	btn_is_click(false,'#save_change_addr');
 	$('#show_addr').removeClass('dis_none');
 	$('#edit_addr').addClass('dis_none');
 });

@@ -51,7 +51,7 @@ function up_user_info(tel_,pwd_){
 	$.ajax(  
     {  
         type:'get',  
-        url : 'http://elife.com/register.php?tel='+tel_+'&pwd='+pwd_+'',  
+        url : 'http://139.199.198.216/register.php?tel='+tel_+'&pwd='+pwd_+'',  
         dataType : 'jsonp',  
         jsonp:"jsoncallback", 
         timeout:15000,

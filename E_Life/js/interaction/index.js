@@ -2,7 +2,7 @@ function get_user_info(){
 	$.ajax(  
     {  
         type:'get',  
-        url : 'http://elife.com/index.php?',  
+        url : 'http://139.199.198.216/index.php?',  
         dataType : 'jsonp',  
         jsonp:"jsoncallback", 
         timeout:15000,
@@ -34,7 +34,7 @@ function not_login(){
 function get_order_info(){
 	$.ajax({  
         type:'get',  
-        url : 'http://elife.com/show_order.php?',  
+        url : 'http://139.199.198.216/show_order.php?',  
         dataType : 'jsonp',  
         jsonp:"jsoncallback", 
         timeout:15000,

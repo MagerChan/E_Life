@@ -13,7 +13,7 @@ $('#suggestbtn').click(function(){
 	var suggest_content=$('#suggestcontent').val();
 	$.ajax({  
         type:'get',  
-        url : 'http://elife.com/suggest.php?suggest='+suggest_content+'',  
+        url : 'http://139.199.198.216/suggest.php?suggest='+suggest_content+'',  
         dataType : 'jsonp',  
         jsonp:"jsoncallback", 
         timeout:15000,
@@ -50,6 +50,5 @@ function commitFail(){
 }
 
 $('#suggestback').click(function(){
-	//location.replace('../../debug/tmpl/index.html');
-	history.back();
+	location.replace('../../debug/tmpl/index.html');
 });

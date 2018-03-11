@@ -13,7 +13,7 @@ get_order_detail_info(order_id);
 function get_order_detail_info(){
 	$.ajax({
 		type: "get",
-		url: 'http://elife.com/get_order_detail_info.php?orderid='+order_id+'',
+		url: 'http://139.199.198.216/get_order_detail_info.php?orderid='+order_id+'',
 		dataType: 'jsonp',
 		jsonp: "jsoncallback",
 		timeout: 15000,
@@ -61,18 +61,11 @@ function show_order(type,addr,aunt,duration,time,cost,status,submittime){
 	var dd = submittime.date_;
 	submittime = yy + '年' + mm + '月' + dd + '日';
 	$('#c_order_submittime_show').html(submittime);
-	
-	$('#evaluate').click(function(){
-		if(status == '已完成'){
-			location.href='../../debug/tmpl/evaluate.html?order_id='+order_id+'';
-		}else{
-			ELife_UI.Toast.show('订单尚未完成，不能评价');
-			window.setTimeout(function() {
-				ELife_UI.Toast.hide();
-			}, 2000);
-		}
-	});
 }
+
+$('#evaluate').click(function(){
+	location.href='../../debug/tmpl/evaluate.html?order_id='+order_id+'';
+});
 
 $('#cancel').click(function(){
 	var timestamp = Date.parse(new Date())/1000;
@@ -90,7 +83,7 @@ $('#cancel').click(function(){
 		message: '确定要取消服务吗?',
 		ok: function() {
 			$.ajax({
-				url: 'http://elife.com/cancel_order.php?order_id='+order_id+'',
+				url: 'http://139.199.198.216/cancel_order.php?order_id='+order_id+'',
 				type: 'GET',
 				dataType: 'jsonp',
 				jsonp: "jsoncallback",
@@ -122,7 +115,7 @@ $('#delete_order').click(function(){
 		message: '确定要取消订单在列表中显示吗?',
 		ok: function() {
 			$.ajax({
-				url: 'http://elife.com/delete_order.php?order_id='+order_id+'',
+				url: 'http://139.199.198.216/delete_order.php?order_id='+order_id+'',
 				type: 'GET',
 				dataType: 'jsonp',
 				jsonp: "jsoncallback",

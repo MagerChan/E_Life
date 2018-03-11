@@ -11,7 +11,7 @@ if(serveid != null && serveid.toString().length >= 1) {
 function get_serve_info(serveid){
 	$.ajax({
 		type: "get",
-		url: 'http://elife.com/RiChangBaoJie.php?id='+serveid+'',
+		url: 'http://139.199.198.216/RiChangBaoJie.php?id='+serveid+'',
 		dataType: 'jsonp',
 		jsonp: "jsoncallback",
 		timeout: 15000,
@@ -52,7 +52,7 @@ function onorderclick(data){
 	//跳转到place_order页面
 	$.ajax({
 		type: "get",
-		url: 'http://elife.com/save_serve_info.php?serveid='+serveid+'&servename='+data.serve_title+'&cost='+data.serve_cost+'',
+		url: 'http://139.199.198.216/save_serve_info.php?serveid='+serveid+'&servename='+data.serve_title+'&cost='+data.serve_cost+'',
 		dataType: 'jsonp',
 		jsonp: "jsoncallback",
 		timeout: 15000,

@@ -54,8 +54,6 @@ function insert_serveday(appid_tag) {
 }
 
 function insert_servetime(appid_tag, flag) {
-	var hh=0;
-	var mm=0;
 	$('#servetime' + flag).empty();
 	var hour = 8;
 	for(var i = 0; i < appid_tag; i++) {
@@ -74,24 +72,9 @@ function insert_servetime(appid_tag, flag) {
 		hour = h_;
 
 		$(appid).data('pos', i);
-		
-		if(flag == 0){
-			var getnowtime=getNowTime();
-			hh=getnowtime.hour;
-			mm=getnowtime.min;
-			if(h_ <= (hh+1)){
-				$(appid).addClass('servetimeitem_over');
-			}else{
-				$(appid).click(function() {
-					onServeTimeClick(this, flag);
-				});
-			}
-		}else{
-			$(appid).click(function() {
-				onServeTimeClick(this, flag);
-			});
-		}
-		
+		$(appid).click(function() {
+			onServeTimeClick(this, flag);
+		});
 		$('#servetime' + flag).append(appid);
 	}
 }
@@ -272,14 +255,14 @@ $('#auntsub').click(function() {
 });
 
 $('#palceorderback').click(function() {
-	history.back();
+	window.history.back();
 });
 
 getaddrinfo();
 
 function getaddrinfo() {
 	$.ajax({
-		url: 'http://elife.com/get_serve_addr.php?',
+		url: 'http://139.199.198.216/get_serve_addr.php?',
 		type: 'GET',
 		dataType: 'jsonp',
 		jsonp: "jsoncallback",
@@ -337,7 +320,7 @@ $('#place_order').click(function() {
 
 	$.ajax({
 		type: "get",
-		url: 'http://elife.com/get_order_info.php?',
+		url: 'http://139.199.198.216/get_order_info.php?',
 		dataType: 'jsonp',
 		jsonp: "jsoncallback",
 		timeout: 15000,
@@ -365,7 +348,7 @@ $('#confirm_order').click(function() {
 	
 	$.ajax({
 		type: "get",
-		url: 'http://elife.com/place_order.php?h='+hournum_+'&a_n='+auntnum_+'&t='+serve_weekday_+' '+serve_time_+'&cost='+cost+'',
+		url: 'http://139.199.198.216/place_order.php?h='+hournum_+'&a_n='+auntnum_+'&t='+serve_weekday_+' '+serve_time_+'&cost='+cost+'',
 		dataType: 'jsonp',
 		jsonp: "jsoncallback",
 		timeout: 15000,

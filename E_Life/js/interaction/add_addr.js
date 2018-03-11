@@ -1,7 +1,6 @@
 var addr_n=0;
 var addr_t=1;
 var addr_a=0
-get_user_info();
 
 $('#addr_name').keyup(function(){
 	addr_n= $('#addr_name').val() != '' ? 1 : 0;
@@ -34,13 +33,14 @@ $('#save_serve_addr').click(function(){
 	var name=$('#addr_name').val();
 	var addr=$('#addr_addr').val();
 	var tel=$('#addr_tel').val();
+	var userid=4;
 	add_addr_(name,addr,userid,tel);
 });
 
 function add_addr_(name_,addr_,userid_,tel_){
 	$.ajax({
 		type:"get",
-		url:'http://elife.com/add_addr.php?name='+name_+'&addr='+addr_+'&tel='+tel_+'',
+		url:'http://139.199.198.216/add_addr.php?name='+name_+'&addr='+addr_+'&userid='+userid_+'&tel='+tel_+'',
 		dataType : 'jsonp',  
         jsonp:"jsoncallback", 
         timeout:15000,
@@ -79,22 +79,5 @@ function addaddrFail(){
 }
 
 $('#add_addr_back').click(function(){
-	history.back();
+	window.history.back();
 });
-
-function get_user_info(){
-	$.ajax(  
-    {  
-        type:'get',  
-        url : 'http://elife.com/index.php?',  
-        dataType : 'jsonp',  
-        jsonp:"jsoncallback", 
-        timeout:15000,
-        success  : function(data) { 
-        	$('#addr_tel').val(data.username);
-        },  
-        error : function(XMLHttpRequest, textStatus, errorThrown) {  
-        	
-        }  
-    }); 
-}
