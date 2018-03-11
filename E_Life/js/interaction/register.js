@@ -1,15 +1,15 @@
-var serve_info_='';
+var user_info_='';
 
-function get_serve_info(){
+function up_user_info(){
 	$.ajax(  
     {  
         type:'get',  
-        url : 'http://elife.com/index.php?',  
+        url : 'http://elife.com/register.php?',  
         dataType : 'jsonp',  
         jsonp:"jsoncallback", 
         timeout:15000,
         success  : function(data) {  
-            serve_create(data);  
+            user_create(data);  
         },  
         error : function(XMLHttpRequest, textStatus, errorThrown) {  
             //console.log('服务器读取数据出错！');
@@ -21,9 +21,9 @@ function get_serve_info(){
 ); 
 }
 
-function serve_create(serve_info){
-	for(var i=0;i<serve_info.length;i++){
-		serve_info_+=serve_info[i]['serve_title'];
+function user_create(user_info){
+	for(var i=0;i<user_info.length;i++){
+		user_info_+=user_info[i]['user_title'];
 	}
-	/*$('#serve_info').html(serve_info_);*/
+	/*$('#user_info').html(user_info_);*/
 }

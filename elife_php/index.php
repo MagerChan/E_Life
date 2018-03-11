@@ -1,17 +1,17 @@
 <?php
-
     ini_set("error_reporting","E_ALL & ~E_NOTICE");
-    include_once("common.php");
+    /*include_once("common.php");*/
 
-    /*$serves = array();
-	$serves = get_serve();
-	echo json_encode($serves);*/
+    $serves = array();
+    $serves = get_serve();
+	//echo json_encode($serves);
+    echo $_GET['jsoncallback']."(".json_encode($serves).")";//解决ajax跨域问题
 
-    /*function get_serve(){
-    	$hostname = "139.199.198.216";
+    function get_serve(){
+    	/*$hostname = "139.199.198.216";
 	    $dbname = "elife";
 	    $username = "Administrator";
-	    $password = "beautiful@123";
+	    $password = "beautiful@123";*/
         $hostname = "localhost";
         $dbname = "elife";
         $username = "root";
@@ -19,7 +19,8 @@
 
     	$serves = array();
 	    try {
-	        $conn = new PDO("mysql:host=$hostname;dbname=$dbname", $username, $password);
+            $_opts_values = array(PDO::ATTR_PERSISTENT=>true,PDO::ATTR_ERRMODE=>2,PDO::MYSQL_ATTR_INIT_COMMAND=>'SET NAMES utf8');//解决乱码问题
+	        $conn = new PDO("mysql:host=$hostname;dbname=$dbname", $username, $password,$_opts_values);
 	        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	        $sql = "SELECT * FROM elife_serve";
 	        $stmt = $conn->prepare($sql);
@@ -37,21 +38,5 @@
 	    $conn = null;
 
 	    return $serves;
-    }*/
-
-    /*$sql=mysql_query("select * from elife_serve");
-
-    while($row = mysql_fetch_array($sql,MYSQL_ASSOC)){
-        //var_dump($row['serve_title']);
-        //var_dump($row);
-        echo $_GET['callbackparam']."(".json_encode($row).")";
-    }*/
-
-    $arr = array(  
-        "user" => $_GET['loginuser'],  
-        "pass" => $_GET['loginpass'],  
-        "name" => 'response'  
-      
-    );  
-    echo $_GET['jsoncallback'] . "(".json_encode($arr).")"; 
+    }
 ?>

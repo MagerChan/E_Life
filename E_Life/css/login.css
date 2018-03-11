@@ -100,3 +100,7 @@
 #login_sec p span{
 	color: #00BEAE;
 }
+
+#register_sec{
+	display: none;
+}
