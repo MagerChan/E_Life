@@ -42,16 +42,17 @@ function get_order_info(){
         timeout:15000,
         success  : function(data) { 
             if(data.ret){
+            	$('.no_order').css('display','none');
             	for(var i=0;i<data.orderinfo.length;i++){
             		var status=data.orderinfo[i]['status'] == 0 ? '进行中' : '已完成';
             		create_order(data.serveinfo[i][0]['serve_title'],status,data.serveinfo[i][0]['serve_content'],data.orderinfo[i]['cost'],data.serveinfo[i][0]['big_icon']);
             	}
+            }else{
+            	$('.no_order').css('display','block');
             }
         },  
         error : function(XMLHttpRequest, textStatus, errorThrown) {
-            console.log(XMLHttpRequest.readyState);
-            console.log(XMLHttpRequest.status);
-            console.log(textStatus);
+        	$('.no_order').css('display','block');
             ELife_UI.Toast.show('服务器繁忙，请稍后重试！');
 			window.setTimeout(function(){
 				ELife_UI.Toast.hide();

@@ -67,3 +67,8 @@ function onorderclick(data){
 		}
 	});
 }
+
+
+$('#rcbj_back').click(function(){
+	history.back();
+});

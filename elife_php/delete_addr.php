@@ -4,11 +4,11 @@
     $data = array("ret"=>false, "msg"=>"");
     $id=$_GET['addr_id'];
 
-    $data = insert_addr($id);
+    $data = delete_addr($id);
 
     echo $_GET['jsoncallback']."(".json_encode($data).")";//解决ajax跨域问题
 
-    function insert_addr($id){
+    function delete_addr($id){
         /*$hostname = "139.199.198.216";
         $dbname = "elife";
         $username = "Administrator";

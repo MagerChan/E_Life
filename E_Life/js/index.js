@@ -481,6 +481,11 @@ function initials() {//公众号排序
     };
 }
 
+function get_loaction_name(obj){
+	$('#dqxz_location').html($(obj).html());
+}
+
+
 ELife_UI=new(function(){
 	this.Message=new(function(){
 		var root_id="elife_msg_box";

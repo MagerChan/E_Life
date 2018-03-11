@@ -56,7 +56,6 @@ function up_user_info(tel_,pwd_){
         jsonp:"jsoncallback", 
         timeout:15000,
         success  : function(data) { 
-        	console.log(data);
             if(data.ret){
             	insertSuccess();
             }else{
@@ -81,7 +80,7 @@ function insertSuccess(){
 		ELife_UI.Toast.hide();
 		
 		//页面跳转到首页，并且是登录状态
-		
-		
+		history.go(-1); //回退并且刷新
+		location.reload();
 	},2000);
 }
