@@ -70,11 +70,24 @@ function insert_servetime(appid_tag, flag) {
 
 		appid.innerHTML = '<p>' + hour + ':' + min + '</p><p>￥70</p>';
 		hour = h_;
-
-		$(appid).data('pos', i);
-		$(appid).click(function() {
-			onServeTimeClick(this, flag);
-		});
+		
+		var nowhour=getNowTime().hour;
+		if(flag == 0){
+			if(hour < (nowhour+1)){
+				$(appid).addClass('servetime_over');
+			}else{
+				$(appid).data('pos', i);
+				$(appid).click(function() {
+					onServeTimeClick(this, flag);
+				});
+			}
+		}else{
+			$(appid).data('pos', i);
+			$(appid).click(function() {
+				onServeTimeClick(this, flag);
+			});
+		}
+		
 		$('#servetime' + flag).append(appid);
 	}
 }
@@ -385,3 +398,4 @@ function addorderFail(){
 		ELife_UI.Toast.hide();
 	}, 2000);
 }
+

@@ -1,4 +1,5 @@
 var subtime='';
+var is_evaluate=0;
 $('#ddxqback').click(function(){
 	history.back();
 });
@@ -24,10 +25,13 @@ function get_order_detail_info(){
             		var status;
             		if(data.orderinfo[i]['status'] == 0){
             			status='进行中';
+            			is_evaluate=0;
             		}else if(data.orderinfo[i]['status'] == 1){
             			status='已完成';
+            			is_evaluate=1;
             		}else{
             			status='已取消';
+            			is_evaluate=2;
             		}
             		show_order(data.serveinfo[i][0]['serve_title'],data.addrinfo[i][0]['detail_addr'],
             		data.orderinfo[i]['aunt_num'],data.orderinfo[i]['serve_hour'],
@@ -64,7 +68,20 @@ function show_order(type,addr,aunt,duration,time,cost,status,submittime){
 }
 
 $('#evaluate').click(function(){
-	location.href='../../debug/tmpl/evaluate.html?order_id='+order_id+'';
+	if(is_evaluate == 0){
+		ELife_UI.Toast.show('服务进行中，还不能评价');
+		window.setTimeout(function() {
+			ELife_UI.Toast.hide();
+		}, 2000);
+	}else if(is_evaluate == 1){
+		location.href='../../debug/tmpl/evaluate.html?order_id='+order_id+'';
+	}else{
+		ELife_UI.Toast.show('服务已取消，不能评价');
+		window.setTimeout(function() {
+			ELife_UI.Toast.hide();
+		}, 2000);
+	}
+	
 });
 
 $('#cancel').click(function(){

@@ -220,3 +220,8 @@
 	height: 50px;
 	display: block;
 }
+
+.servetime_over{
+	color:#C0C0C0;
+	border-color: #C0C0C0;
+}
