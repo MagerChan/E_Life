@@ -200,6 +200,11 @@
 	font-size: 12px;
 }
 
+.servetimeitem_over{
+	border-color: #CCCCCC;
+	color: #CCCCCC;
+}
+
 
 .selectitem{
 	border: 1px solid #00BEAE;

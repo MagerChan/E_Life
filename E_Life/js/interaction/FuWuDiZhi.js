@@ -18,16 +18,16 @@ function get_addr() {
 		timeout: 15000,
 		success: function(data) {
 			console.log(data);
-			if(data.ret) {
+			if(data.ret) {//登录有结果
 				$('.no_address').css('display','none');
 				for(var i = 0; i < data.result.length; i++) {
 					insert_addr(data.result[i]["name"], data.result[i]["detail_addr"], data.result[i]["tel"],data.result[i]['_id']);
 				}
-			} else if(!data.nologin){
-				$('.no_address').css('display','none');
-				//location.href="../../debug/tmpl/login.html";
-			}else {
+			} else if(data.islogin){//已经登录的
 				$('.no_address').css('display','block');
+			}else {//没有登录的
+				$('.no_address').css('display','none');
+				location.href="../../debug/tmpl/login.html";
 			}
 		},
 		error: function(XMLHttpRequest, textStatus, errorThrown) {
@@ -269,6 +269,7 @@ $('#save_change_addr').click(function(){
 });
 
 $('#edit_addr_back').click(function(){
+	btn_is_click(false,'#save_change_addr');
 	$('#show_addr').removeClass('dis_none');
 	$('#edit_addr').addClass('dis_none');
 });

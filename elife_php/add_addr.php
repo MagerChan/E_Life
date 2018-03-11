@@ -1,10 +1,12 @@
 <?php
     ini_set("error_reporting","E_ALL & ~E_NOTICE");
 
+    session_start();
+    
     $data = array("ret"=>false, "msg"=>"");
     $name=$_GET['name'];
     $addr=$_GET['addr'];
-    $userid=$_GET['userid'];
+    $userid=$_SESSION['userid'];  
     $tel=$_GET['tel'];
 
     $data = insert_addr($name,$addr,$userid,$tel);

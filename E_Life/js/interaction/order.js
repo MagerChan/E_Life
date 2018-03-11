@@ -54,6 +54,8 @@ function insert_serveday(appid_tag) {
 }
 
 function insert_servetime(appid_tag, flag) {
+	var hh=0;
+	var mm=0;
 	$('#servetime' + flag).empty();
 	var hour = 8;
 	for(var i = 0; i < appid_tag; i++) {
@@ -72,9 +74,24 @@ function insert_servetime(appid_tag, flag) {
 		hour = h_;
 
 		$(appid).data('pos', i);
-		$(appid).click(function() {
-			onServeTimeClick(this, flag);
-		});
+		
+		if(flag == 0){
+			var getnowtime=getNowTime();
+			hh=getnowtime.hour;
+			mm=getnowtime.min;
+			if(h_ <= (hh+1)){
+				$(appid).addClass('servetimeitem_over');
+			}else{
+				$(appid).click(function() {
+					onServeTimeClick(this, flag);
+				});
+			}
+		}else{
+			$(appid).click(function() {
+				onServeTimeClick(this, flag);
+			});
+		}
+		
 		$('#servetime' + flag).append(appid);
 	}
 }
@@ -255,7 +272,7 @@ $('#auntsub').click(function() {
 });
 
 $('#palceorderback').click(function() {
-	window.history.back();
+	history.back();
 });
 
 getaddrinfo();

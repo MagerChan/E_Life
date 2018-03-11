@@ -619,7 +619,7 @@ $('#locationback').click(function(){
 });
 
 $('#allserveback').click(function(){
-	history.back();
+	location.href='../../debug/tmpl/index.html';
 });
 
 function get_loaction_name(obj){
@@ -657,8 +657,8 @@ $('#logout').click(function(){
 				ELife_UI.Toast.show('退出成功');
 				window.setTimeout(function() {
 					ELife_UI.Toast.hide();
+					location.href='../../debug/tmpl/index.html';
 				}, 2000);
-				location.href('../../debug/tmpl/index.html');
 			} else {
 				ELife_UI.Toast.show('网络繁忙,请稍后重试');
 				window.setTimeout(function() {

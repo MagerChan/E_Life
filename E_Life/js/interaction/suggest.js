@@ -50,5 +50,6 @@ function commitFail(){
 }
 
 $('#suggestback').click(function(){
-	location.replace('../../debug/tmpl/index.html');
+	//location.replace('../../debug/tmpl/index.html');
+	history.back();
 });

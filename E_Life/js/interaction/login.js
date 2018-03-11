@@ -62,8 +62,6 @@ function loginSuccess(){
 		ELife_UI.Toast.hide();
 		
 		//页面跳转到首页，并且是登录状态,session
-		//location.href='../../debug/tmpl/index.html';
-		//location.replace('../../debug/tmpl/index.html');
 		history.go(-1); //回退并且刷新
 		location.reload();
 	},2000);
@@ -88,11 +86,5 @@ $('#reg_back').on('click',function(e){
 });
 
 $('#loginbacktoindex').click(function (event) {
-    /*if (event && event.preventDefault) {
-        event.preventDefault();
-    }
-    fnUrlReplace(this);
-    return false;*/
-    //location.replace('../../debug/tmpl/index.html');
     history.back();
 });

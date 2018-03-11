@@ -61,11 +61,18 @@ function show_order(type,addr,aunt,duration,time,cost,status,submittime){
 	var dd = submittime.date_;
 	submittime = yy + '年' + mm + '月' + dd + '日';
 	$('#c_order_submittime_show').html(submittime);
+	
+	$('#evaluate').click(function(){
+		if(status == '已完成'){
+			location.href='../../debug/tmpl/evaluate.html?order_id='+order_id+'';
+		}else{
+			ELife_UI.Toast.show('订单尚未完成，不能评价');
+			window.setTimeout(function() {
+				ELife_UI.Toast.hide();
+			}, 2000);
+		}
+	});
 }
-
-$('#evaluate').click(function(){
-	location.href='../../debug/tmpl/evaluate.html?order_id='+order_id+'';
-});
 
 $('#cancel').click(function(){
 	var timestamp = Date.parse(new Date())/1000;

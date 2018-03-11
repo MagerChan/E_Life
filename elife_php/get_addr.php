@@ -1,15 +1,15 @@
 <?php
     ini_set("error_reporting","E_ALL & ~E_NOTICE");
+    session_start();
 
-    $data = ["ret"=>false,"nologin"=>false ,"msg"=>"","result"=>""];
+    $data = ["ret"=>false,"islogin"=>false ,"msg"=>"","result"=>""];
     $userid=$_SESSION['userid'];
 
     if($userid){
         $data = get_addr($userid);
-        $data['nologin']=true;
-        echo "hhhh";
+        $data['islogin']=true;
     }else
-        $data['nologin']=false;
+        $data['islogin']=false;
 
     echo $_GET['jsoncallback']."(".json_encode($data).")";//解决ajax跨域问题
 
@@ -33,7 +33,7 @@
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
             if (count($result)){
                 $data['ret']=true;
-                $data['nologin']=true;
+                $data['islogin']=true;
                 $data['result']=$result;
             }else{
                 $data['ret']=false;
