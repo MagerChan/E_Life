@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+		<title>易生活</title>
+		<link rel="stylesheet" type="text/css" href="css/base.css">
+		<link rel="stylesheet" type="text/css" href="css/index.css">
+		<link rel="stylesheet" href="css/order.css" />
+		<link rel="stylesheet" href="css/login.css" />
+	</head>
+
+	<body>
+		<div class="layout">
+			<!-- 登录头部 -->
+			<header class="header">
+				<div class="header_box_order">
+					<a href="#" class="login_back"><img src=""/></a>
+					<div class="p1">快速登录</div>
+				</div>
+			</header>
+			
+			<section id="login_sec">
+				<p>为了确保服务质量，请先验证您的手机</p>
+				
+				<form id="login" method="post">
+					<div id="tel" class="login">
+						<div class="loginitem"><span>手机号</span></div>
+						<div class="telnum"><input type="tel" maxlength="11" value="12345678910"/></div>
+						<div class="regxnum"><a href="#">获取验证码</a></div>
+					</div>
+					
+					<div id="regx" class="login">
+						<div class="loginitem"><span>验证码</span></div>
+						<div class="telnum"><input type="tel" maxlength="4" value="1234"/></div>
+						<div class="regxnum"><a href="#">没有收到？</a></div>
+					</div>
+					
+					<input type="button" value="立即登录" id="loginbtn" />
+				</form>
+				
+				<p>点击-立即登录，即表示您同意<span>《易生活使用协议》</span></p>
+			</section>
+		</div>
+	</body>
+
+</html>
