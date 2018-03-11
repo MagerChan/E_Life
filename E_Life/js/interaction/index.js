@@ -1,7 +1,7 @@
 var serve_info_='';
 
 function get_serve_info(){
-	$.ajax(  
+	/*$.ajax(  
     {  
         type:'get',  
         url : 'http://elife.com/index.php?',  
@@ -17,8 +17,7 @@ function get_serve_info(){
             console.log(XMLHttpRequest.status);
             console.log(textStatus);
         }  
-    }  
-); 
+    }); */
 }
 
 function serve_create(serve_info){

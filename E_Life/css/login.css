@@ -1,11 +1,15 @@
 .login_back{
 	position: absolute;
+	width: 60px;
 	height: 60px;
 	left: 0;
 	top: 0;
 }
 .login_back img{
 	display: block;
+	width: 40px;
+	height: 40px;
+	margin: 10px;
 }
 .log_reg_sec{
 	position: absolute;
