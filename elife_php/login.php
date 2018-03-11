@@ -1,6 +1,8 @@
 <?php
     ini_set("error_reporting","E_ALL & ~E_NOTICE");
 
+    session_start();
+
     $data = ["ret"=>false, "msg"=>"", "username"=>"","user_id"=>""];
     $tel=$_GET['tel'];
     $pwd=$_GET['pwd'];
@@ -33,6 +35,9 @@
                 $data['ret']=true;
                 $data['username']=$tel;
                 $data['user_id']=$result[0]['_id'];
+
+                $_SESSION['tel']=$tel;
+                $_SESSION['userid']=$result[0]['_id'];
             }else{
                 $data['ret']=false;
             }

@@ -507,9 +507,9 @@ ELife_UI=new(function(){
 	this.Message=new(function(){
 		var root_id="elife_msg_box";
 		this.show=function(params){
-			var innerHtml='<div class="elife_messagebox_content">\
+			var innerHtml='<div class="elife_messagebox_content messagebg">\
                     <div class="elife_messagebox_title"><strong>弹窗标题</strong></div>\
-                    <div class="elife_messagebox_info">自定义弹窗内容<br></div>\
+                    <div class="elife_messagebox_info contentcolor">自定义弹窗内容<br></div>\
                     <div class="elife_messagebox_ft">\
                         <a href="javascript:;" class="elife_msg_box_btn_cancel">取消</a>\
                         <a href="javascript:;" class="elife_msg_box_btn_ok">确定</a>\

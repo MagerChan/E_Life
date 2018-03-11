@@ -1,14 +1,9 @@
 <?php
     ini_set("error_reporting","E_ALL & ~E_NOTICE");
 
+    /*把session传回去*/
+
     $data = array("ret"=>false, "msg"=>"");
-    /*$arr = array(  
-        "tel" => $_GET['tel'],  
-        "pwd" => $_GET['pwd'],  
-        "cpwd"=> $_GET['cpwd']
-    );*/
-    $tel=$_GET['tel'];
-    $pwd=$_GET['pwd'];
 
     $data = get_serve($tel,$pwd);
 

@@ -9,7 +9,7 @@
 	</head>
 
 	<body>
-		<div class="layout">
+		<div class="layout" id="show_addr">
 			<header class="header">
 				<div class="header_box_order">
 					<div class="p1">服务地址</div>
@@ -22,24 +22,44 @@
 				<a href="add_addr.html">添加服务地址</a>
 			</section>
 
-			<!--<section class="has_address">				
-			</section>-->
-			<ul class="has_address">
-				<!--<li class='address'>
-					<div class='addr_left'>
-						<p>name </p>
-						<p> addr </p>
-					</div>
-					<div class='addr_right'> tel</div>
-					<div class='div_btn dis_none'>
-						<a class='btn_view btn_edit_item'>选中</a>
-						<a class='btn_edit btn_edit_item'>编辑</a>
-						<a class='btn_delete btn_edit_item'>删除</a>
-					</div>
-				</li>-->				
-			</ul>
+			<ul id="ul_addr_list" class="has_address"></ul>
 
-			<input type="button" value="添加服务地址" id="add_serve_addr" />
+			<section class="addr_add">
+				<input type="button" value="添加服务地址" id="add_serve_addr" />
+			</section>
+		</div>
+
+		<div class="layout dis_none" id="edit_addr">
+			<header class="header">
+				<div class="header_box_order">
+					<div class="p1">编辑服务地址</div>
+					<a href="#" class="back" id="edit_addr_back"><img src="" /></a>
+				</div>
+			</header>
+
+			<section class="add_addr">
+				<div class="add_addr_item">
+					<div>联系人</div>
+					<div>
+						<input type="text" id="edit_name_change" value="玛阁" />
+						<input type="hidden" id="id_hidden" />
+					</div>
+				</div>
+
+				<div class="add_addr_item">
+					<div>手机号码</div>
+					<div><input type="tel" id="edit_tel_change" maxlength="11" value="18320364821" /></div>
+				</div>
+
+				<div class="add_addr_item">
+					<div>地址详情</div>
+					<div><input type="text" id="edit_addr_change" value="10栋2单元10A" /></div>
+				</div>
+			</section>
+
+			<section class="addr_save">
+				<input type="button" id="save_change_addr" value="保存服务地址" disabled="true"/>
+			</section>
 		</div>
 
 		<script type="text/javascript" src="../js/thirdpart/zepto.min.js"></script>
