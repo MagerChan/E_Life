@@ -1,5 +1,8 @@
 <?php
     ini_set("error_reporting","E_ALL & ~E_NOTICE");
+    /*header('Access-Control-Allow-Origin:*');
+    header('Access-Control-Allow-Headers:X-Requested-With');
+    header('Access-Control-Allow-Methods:GET,POST,OPTIONS,DELETE');*/
 
     session_start();
 

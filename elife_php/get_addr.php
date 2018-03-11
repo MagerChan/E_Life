@@ -2,9 +2,13 @@
     ini_set("error_reporting","E_ALL & ~E_NOTICE");
 
     $data = ["ret"=>false, "msg"=>"","result"=>""];
-    $userid=$_GET['userid'];
+    /*$userid=$_GET['userid'];*/
+    $userid=$_SESSION['userid'];
 
-    $data = get_addr($userid);
+    if($userid)
+        $data = get_addr($userid);
+    else
+        $data['ret']=false;
 
     echo $_GET['jsoncallback']."(".json_encode($data).")";//解决ajax跨域问题
 

@@ -644,3 +644,39 @@ function getLocalTime(nS) {
 		min:min
 	}
 }
+
+$('#logout').click(function(){
+	$.ajax({
+		type: "get",
+		url: 'http://elife.com/logout.php?',
+		dataType: 'jsonp',
+		jsonp: "jsoncallback",
+		timeout: 15000,
+		success: function(data) {
+			if(data.ret) {
+				ELife_UI.Toast.show('退出成功');
+				window.setTimeout(function() {
+					ELife_UI.Toast.hide();
+				}, 2000);
+			} else {
+				ELife_UI.Toast.show('网络繁忙,请稍后重试');
+				window.setTimeout(function() {
+					ELife_UI.Toast.hide();
+				}, 2000);
+			}
+		},
+		error: function(XMLHttpRequest, textStatus, errorThrown) {
+			ELife_UI.Toast.show('服务器繁忙，请稍后重试');
+			window.setTimeout(function() {
+				ELife_UI.Toast.hide();
+			}, 2000);
+		}
+	});
+});
+
+/*添加这个方法的元素,其链接不进入历史url记录堆栈*/
+//$('#header nav a').on('click', function (event) {
+//  event.preventDefault();
+//  history.replaceState(null, document.title, this.href.split('#')[0] + '#');
+//  location.replace('');
+//})

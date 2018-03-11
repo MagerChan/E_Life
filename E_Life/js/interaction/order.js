@@ -314,7 +314,6 @@ $('#place_order').click(function() {
 	$('#c_order_aunt').html(auntnum_ + '位阿姨');
 	$('#c_order_duration').html(hournum_ + '小时');
 	$('#c_order_time').html(serve_weekday_ + ' ' + serve_time_);
-	//$('#c_order_cost').html('元');
 
 	$('#placeorder_page').css('display', 'none');
 	$('#confirmorder_page').css('display', 'block');

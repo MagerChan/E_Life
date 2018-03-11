@@ -1,21 +1,18 @@
 var curExtendItem = null;
 var chooseContent = '';
 
-/*需要传入用户id*/
-var userid=4;
-
 /*判断从那个页面进入到服务地址的页面，已显示不同的选择*/
 var urlobj = GetQueryString("page");
 if(urlobj != null && urlobj.toString().length > 1) {
 	urlobj = GetQueryString("page")
 }
 
-get_addr(userid);
+get_addr();
 
-function get_addr(id) {
+function get_addr() {
 	$.ajax({
 		type: "get",
-		url: 'http://elife.com/get_addr.php?userid=' + id + '',
+		url: 'http://elife.com/get_addr.php?',
 		dataType: 'jsonp',
 		jsonp: "jsoncallback",
 		timeout: 15000,
@@ -25,7 +22,7 @@ function get_addr(id) {
 					insert_addr(data.result[i]["name"], data.result[i]["detail_addr"], data.result[i]["tel"],data.result[i]['_id']);
 				}
 			} else {
-				editaddrFail();
+				location.href="../../debug/tmpl/login.html";
 			}
 		},
 		error: function(XMLHttpRequest, textStatus, errorThrown) {
